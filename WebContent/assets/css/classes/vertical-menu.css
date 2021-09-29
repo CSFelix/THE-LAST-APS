@@ -1,0 +1,29 @@
+.toogleMenuVisivel {
+	position: absolute; left: 6px; top: 8px; font-size: 25px;
+	z-index: 3; color: var(--background-color); border-radius: 50%;
+	outline: none; width: 40px; height: 40px; opacity: 0.85;
+    text-align: center; padding-top: 7.5px; 
+}
+
+.toogleMenuVisivel:hover { cursor: pointer; background: rgba(54, 54, 54, 0.4); opacity: 1; }
+
+.verticalMenu {
+	position: absolute; z-index: 2; left: 0; top: 50px;
+	width: 50px; /*height: calc(100vh - 50px);*/
+	background: linear-gradient(to bottom, var(--style-secondary-color), var(--style-primary-color));
+	transition: width 0.3s linear, visibility 0.25s linear;
+	overflow-y: auto; overflow-x: hidden;
+}
+
+.verticalMenu ul li {
+	font-size: 20px; text-align: center; vertical-align: middle;
+	height: 50px; line-height: 50px; color: var(--style-secondary-color);
+}
+
+.verticalMenu ul li:hover { cursor: pointer; background: var(--style-terciary-color); }
+.verticalMenu ul li i, .verticalMenu ul li .spanBotaoMenuVertical { color: #363636; }
+
+.verticalMenu ul .active { background: var(--style-terciary-color); }
+.verticalMenu ul .active i, .verticalMenu ul .active .spanBotaoMenuVertical { color: #f0f8ff; }
+
+.verticalMenu ul li .spanBotaoMenuVertical { visibility: hidden; }

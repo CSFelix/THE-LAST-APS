@@ -1,0 +1,14 @@
+.sectionPainel, .sectionPainelBlock { 
+	position: absolute; left: 75px; background: var(--background-color);
+	border-radius: 5px; box-shadow: 0px 0px 10px var(--theme-color);
+	width: calc(100% - 100px); height: fit-content; z-index: 1;
+}
+
+.sectionPainel { display: none; overflow: auto; }
+
+.sectionPainel .sectionPainelHeader,
+.sectionPainelBlock .sectionPainelHeader { border-bottom: 2px solid var(--style-secondary-color); padding-top: 1.25rem; text-indent: 1.25rem; }
+
+/* ativar overflow-x no painel da tabela de produtos,
+a fim de evitar problemas de estouro das sections para versão mobile */
+#painelProdutos { overflow-x: auto; }

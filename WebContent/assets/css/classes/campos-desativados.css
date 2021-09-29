@@ -1,0 +1,3 @@
+.campoDesativado { background-color: var(--style-primary-disabled); }
+.fotoDesativada { filter: grayscale(1); }
+.botaoDesativado { background: var(--style-primary-disabled); border: 2px solid var(--style-secondary-disabled); color: var(--style-secondary-disabled); }

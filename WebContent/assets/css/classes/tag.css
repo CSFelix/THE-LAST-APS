@@ -1,0 +1,23 @@
+/* Tag Comum >> Tipos de Produtos */
+
+.tag {
+	padding: 5px; margin-bottom: 7px;
+	border: 2px solid var(--style-primary-color);
+	border-radius: 13px; color: var(--theme-color);
+}
+
+.tag:hover { 
+	cursor: pointer; 
+	box-shadow: 0px 0px 3px var(--style-primary-color),
+            0px 0px 5px var(--style-primary-color),
+            0px 0px 7px var(--style-primary-color);
+}
+
+.tagAtivada { background: var(--style-secondary-color); }
+
+#limiteTagsProduto { 
+	display: none; width: 250px;
+	color: var(--theme-color);  padding: 1.2rem 2.4rem;
+	border-radius: 0.2rem; box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.4);
+	background: #e69191; border-bottom: 2px solid #b00505;
+}

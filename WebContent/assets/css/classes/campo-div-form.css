@@ -1,0 +1,8 @@
+.campoDivForm, .campoDivFormHidden { position: relative; width: 250px; margin: auto; }
+
+/* 
+	usado para não exibir switch para trocar tipo de usuário no painel de informações
+	o mesmo só é mostrado quando ativada opção de alteração dos itens
+	ademais, ao gravar registros ou cancelar alteração, campo volta a não ser exibido
+ */
+.campoDivFormHidden { display: none; }

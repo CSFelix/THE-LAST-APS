@@ -1,0 +1,56 @@
+<!--
+Toogle Menu Mobile
+<i class="fas fa-bars"></i> >> expandir menu
+<i class="fas fa-times"></i> >> desexpandir menu
+ -->
+<i class="fas fa-times toogleMenuVisivel"></i>
+
+<nav id="verticalMenu" class="verticalMenu">
+	<br><br>
+	<ul>
+
+		<!-- 
+			Toogle Menu
+
+		<i class="fas fa-forward"></i> >> expandir menu
+		<i class="fas fa-backward"></i> >> desexpandir menu
+		-->
+		<li id="liToogleMenuVertical">
+			<i id="toogleMenuVertical" class="fas fa-forward"></i>
+		</li>
+
+		<br>
+		<hr>
+		<br>
+
+		<li id="listaPosts">
+			<i class="fas fa-clipboard"></i>
+			<span class="spanBotaoMenuVertical">{{ opcaoListaPostsAtiva }}</span>
+		</li>
+		
+		<li id="listaUsuarios">
+			<i class="fas fa-address-book"></i>
+			<span class="spanBotaoMenuVertical">{{ opcaoListaUsuariosAtiva }}</span>
+		</li>
+
+		<li id="configuracoes" class="active">
+			<i class="fas fa-cog"></i>
+			<span class="spanBotaoMenuVertical">{{ opcaoConfiguracoesAtiva }}</span>
+		</li>
+
+		<br>
+		<hr>
+		<br>
+
+		<li id="opcaoDeslogar">
+			<i class="fas fa-sign-out-alt"></i>
+			<span class="spanBotaoMenuVertical">{{ opcaoSairAtiva }}</span>
+		</li>
+		
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	</ul>
+</nav>

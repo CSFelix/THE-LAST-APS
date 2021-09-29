@@ -1,0 +1,10 @@
+.tabelaPrincipal { border-collapse: separate; width: 100%; overflow: auto; }
+
+.tabelaPrincipal #tabelaHeader { background: linear-gradient(to right, var(--style-primary-color), var(--style-secondary-color), var(--style-primary-color)); color: var(--background-color); }
+
+.tabelaPrincipal tr:nth-child(even){background-color: rgba(206, 213, 219, 0.9); color: #363636;}
+.tabelaPrincipal tr:nth-child(odd){background-color: var(--style-secondary-color); color: #f0f8ff;}
+.tabelaPrincipal tr:hover, .tabelaPrincipal tr th:hover { cursor: default; }
+
+.tabelaPrincipal th { padding-top: 12px; padding-bottom: 12px; text-align: center; vertical-align: middle; border: none; }
+.tabelaPrincipal td { text-align: center; vertical-align: middle; padding: 5px; }
