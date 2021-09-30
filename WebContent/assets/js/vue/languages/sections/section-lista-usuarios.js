@@ -17,7 +17,6 @@ var vuePainelListaUsuarios = new Vue({
 	  palavraDeEnglish: 'of',
 	  palavraDeAtiva: '',
 	  
-	  
 	  trOpcoesPortugues: 'Opções',
 	  trOpcoesEnglish: 'Options',
 	  trOpcoesAtiva: '',
@@ -62,7 +61,7 @@ const vueAtivarControladorIdiomaPainelListaUsuarios = () => {
 	  vuePainelListaUsuarios.palavraPaginaAtiva = vuePainelListaUsuarios.palavraPaginaPortugues;
 	  vuePainelListaUsuarios.palavraDeAtiva = vuePainelListaUsuarios.palavraDePortugues;
 	  
-	  vuePainelListaPosts.trOpcoesAtiva = vuePainelListaPosts.trOpcoesPortugues;
+	  vuePainelListaUsuarios.trOpcoesAtiva = vuePainelListaUsuarios.trOpcoesPortugues;
 	  vuePainelListaUsuarios.trNomeAtiva = vuePainelListaUsuarios.trNomePortugues;
 	  vuePainelListaUsuarios.trEmailAtiva = vuePainelListaUsuarios.trEmailPortugues;
 	  vuePainelListaUsuarios.trNivelAutorizacaoAtiva = vuePainelListaUsuarios.trNivelAutorizacaoPortugues;
@@ -79,7 +78,7 @@ const vueAtivarControladorIdiomaPainelListaUsuarios = () => {
 	  vuePainelListaUsuarios.palavraPaginaAtiva = vuePainelListaUsuarios.palavraPaginaEnglish;
 	  vuePainelListaUsuarios.palavraDeAtiva = vuePainelListaUsuarios.palavraDeEnglish;
 	  
-	  vuePainelListaPosts.trOpcoesAtiva = vuePainelListaPosts.trOpcoesPortugues;
+	  vuePainelListaUsuarios.trOpcoesAtiva = vuePainelListaUsuarios.trOpcoesEnglish;
 	  vuePainelListaUsuarios.trNomeAtiva = vuePainelListaUsuarios.trNomeEnglish;
 	  vuePainelListaUsuarios.trEmailAtiva = vuePainelListaUsuarios.trEmailEnglish;
 	  vuePainelListaUsuarios.trNivelAutorizacaoAtiva = vuePainelListaUsuarios.trNivelAutorizacaoEnglish;
