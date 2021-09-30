@@ -33,10 +33,10 @@ ExibirToastMessage = (codigoMensagem) => {
 		else { mensagem = msgNomeSenhaIncorretosEnglish; }
 	}
 	
-	// (6) Alteração Efetuada
+	// (6) Email não registrado
 	else if (codigoMensagem == 6) { 
-		if (localStorage.getItem('language') === "1") { mensagem = msgAlteracaoEfetuadaPortugues; }
-		else { mensagem = msgAlteracaoEfetuadaEnglish; }
+		if (localStorage.getItem('language') === "1") { mensagem = msgEmailNaoCadastradoPortugues; }
+		else { mensagem = msgEmailNaoCadastradoEnglish; }
 	}
 	
 	// (7) Conta Desativada
@@ -45,18 +45,13 @@ ExibirToastMessage = (codigoMensagem) => {
 		else { mensagem = msgContaDesativadaEnglish; }
 	}
 	
-	// Processamento e exibição da mensagem
-	if (codigoMensagem == 6) { 
-		toast.classList.remove("toastMessageErro");
-		toast.classList.add("toastMessageSucesso");
+	// (8) Alteração Efetuada
+	else if (codigoMensagem == 8) { 
+		if (localStorage.getItem('language') === "1") { mensagem = msgAlteracaoEfetuadaPortugues; }
+		else { mensagem = msgAlteracaoEfetuadaEnglish; }
 	}
 	
 	toast.innerHTML = mensagem;
 	toast.classList.add('show');
 	setTimeout(() => { toast.classList.remove('show'); }, 2000);
-	
-	if (codigoMensagem == 6) { 
-		toast.classList.add("toastMessageErro");
-		toast.classList.remove("toastMessageSucesso");
-	}
 }

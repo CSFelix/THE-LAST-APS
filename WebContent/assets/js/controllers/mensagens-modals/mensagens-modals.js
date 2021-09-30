@@ -19,9 +19,13 @@ const msgNomeSenhaIncorretosPortugues = "😥 Nome e/ou Senha Incorretos...";
 const msgNomeSenhaIncorretosEnglish = "😥 Wrong Nickname and/or Password";
 
 // Mensagem: 6
-const msgAlteracaoEfetuadaPortugues = "🎉 Dados alterados com sucesso!";
-const msgAlteracaoEfetuadaEnglish = "🎉 Successfully changed data!";
+const msgEmailNaoCadastradoPortugues = "😥 Email não cadastrado...";
+const msgEmailNaoCadastradoEnglish = "😥 Unregistered email...";
 
 // Mensagem: 7
 const msgContaDesativadaPortugues = "😥 Conta Desativada...";
 const msgContaDesativadaEnglish = "😥 Disabled Account...";
+
+// Mensagem: 8
+const msgAlteracaoEfetuadaPortugues = "🎉 Dados alterados com sucesso!";
+const msgAlteracaoEfetuadaEnglish = "🎉 Successfully changed data!";
