@@ -26,4 +26,7 @@
 }
 
 #botaoAdicionarPostagem, #botaoAdicionarUsuario { margin-left: 25px; }
-#botaoEditar, #botaoAtualizarTabelaListaUsuarios, #botaoAtualizarTabelaListaPostagens { margin-left: 50px; }
+
+#botaoEditar, #botaoAtualizarTabelaListaUsuarios, #botaoAtualizarTabelaListaPostagens
+, #botaoVisualizarPostVoltar, #botaoCadastroPostVoltar, #botaoAlterarPostVoltar
+, #botaoAlterarUsuarioVoltar { margin-left: 50px; }
