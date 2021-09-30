@@ -4,12 +4,12 @@
 <!DOCTYPE html>
 	
 <html lang="pt-br, en">
-
+	
 	<!-- head -->
 	<jsp:include page="includes/head-painel.html" />
 
 	<body>
-		
+	
 		<!-- menu principal -->
 		<jsp:include page="includes/nav.html" />
 
@@ -18,28 +18,27 @@
 			<!-- blobs -->
 			<div id="left-top-corner" class="blob"></div>
 			<div id="right-bottom-corner" class="blob"></div>
-		
+			
 			<!--  toast messages -->
 			<div id="toast" class="toastMessageErro"></div>
 			
 			<!-- menu veritcal -->
-			<jsp:include page="includes/menu-vertical.html" />
+			<jsp:include page="includes/menu-vertical-painel-post.html" />
 			
-			<!-- painéis -->
-			<jsp:include page="includes/sections/section-info.jsp" />
-			<jsp:include page="includes/sections/section-lista-posts.jsp" />
-			<jsp:include page="includes/sections/section-lista-usuarios.jsp" />
+			<!-- painel -->
+			<jsp:include page="includes/sections/section-cadastro-post.jsp" />
 		</section>
 	</body>
 
 	<!-- vue -->
-	<jsp:include page="includes/vue-painel.html" />
+	<jsp:include page="includes/vue-painel-post.html" />
 	
 	<!-- vue não padrão nas demais páginas -->
+	<script type="text/javascript" src="assets/js/vue/languages/sections/section-cadastro-post.js"></script>
 	
 	
 	<!-- scripts -->
-	<jsp:include page="includes/script-painel.html" />
+	<jsp:include page="includes/script-painel-post.html" />
 	
 	<!-- scripts não padrões nas demais páginas -->
 </html>

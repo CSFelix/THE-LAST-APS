@@ -27,10 +27,10 @@
 				<br><br>
 				
 				<div class="formLoginContent">
-					<!-- nome -->
+					<!-- email -->
 					<div class="campoDivForm flexCenter">
 						<label id="labelLogin" class="campoLabel">{{ labelLoginAtiva }}</label>
-						<p>👤</p>&nbsp&nbsp<input type="text" name="nome" id="inputNome" class="campoInput" onkeyup="checkLabel('labelLogin', this)" onkeydown="checkLabel('labelLogin', this)" onkeypress="ApertarEnterFocus(event, inputSenha)" autofocus required>
+						<p>👤</p>&nbsp&nbsp<input type="email" name="nome" id="inputEmail" class="campoInput" onkeyup="checkLabel('labelLogin', this)" onkeydown="checkLabel('labelLogin', this)" onkeypress="ApertarEnterFocus(event, inputSenha)" autofocus required>
 					</div>
 					<br><br>
 				
@@ -80,4 +80,7 @@
 	<!-- <script type="text/javascript" src="assets/js/ajax/ajax-login.js"></script>-->
 	<script type="text/javascript" src="assets/js/effects/visualizar-senha-login.js"></script>
 	<script type="text/javascript" src="assets/js/controllers/labels-inputs/label-ativa-login.js"></script>
+	
+	<!-- ajax -->
+	<script type="text/javascript" src="assets/js/ajax/ajax-login.js"></script>
 </html>

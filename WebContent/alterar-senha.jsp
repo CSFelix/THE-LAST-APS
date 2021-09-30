@@ -82,4 +82,7 @@
 	<!-- <script type="text/javascript" src="assets/js/ajax/ajax-login.js"></script>-->
 	<script type="text/javascript" src="assets/js/effects/visualizar-senha-alteracao-senha.js"></script>
 	<script type="text/javascript" src="assets/js/controllers/labels-inputs/label-ativa-alterar-senha.js"></script>
+	
+	<!-- ajax -->
+	<script type="text/javascript" src="assets/js/ajax/ajax-alterar-senha.js"></script>
 </html>

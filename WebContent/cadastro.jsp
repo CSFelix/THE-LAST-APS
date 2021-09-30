@@ -62,7 +62,7 @@
 					<!-- confirmar senha -->
 					<div class="campoDivForm flexCenter">
 						<label id="labelConfirmarSenha" class="campoLabel">{{ labelConfirmarSenhaAtiva }}</label>
-						<p>🔒</p>&nbsp&nbsp<input type="password" name="confirmarSenha" id="inputConfirmarSenha" class="campoInput" onkeyup="checkLabel('labelConfirmarSenha', this)" onkeydown="checkLabel('labelConfirmarSenha', this)" onkeypress="ApertarEnterFocus(event, inputAutorizacao)" required>
+						<p>🔒</p>&nbsp&nbsp<input type="password" name="confirmarSenha" id="inputConfirmarSenha" class="campoInput" onkeyup="checkLabel('labelConfirmarSenha', this)" onkeydown="checkLabel('labelConfirmarSenha', this)" required>
 					</div>
 					
 					<br><br>
@@ -105,4 +105,7 @@
 	<!-- scripts não padrões nas demais páginas -->
 	<script type="text/javascript" src="assets/js/effects/visualizar-senha-cadastro.js"></script>
 	<script type="text/javascript" src="assets/js/controllers/labels-inputs/label-ativa-cadastro.js"></script>
+	
+	<!-- ajax -->
+	<script type="text/javascript" src="assets/js/ajax/ajax-cadastro-usuario.js"></script>
 </html>
