@@ -10,7 +10,7 @@
 	<br><br>
 	
 	<!-- botões de adicionar e atualizar postagens -->
-	<a href="#"><button id="botaoAdicionarPostagem" class="botao" data-anijs="if: mouseover, do: rubberBand animated"><i class="fas fa-plus"></i></button></a>
+	<a href="cadastro-post.jsp"><button id="botaoAdicionarPostagem" class="botao" data-anijs="if: mouseover, do: rubberBand animated"><i class="fas fa-plus"></i></button></a>
 	<button id="botaoAtualizarTabelaListaPostagens" class="botao" data-anijs="if: mouseover, do: rubberBand animated"><i class="fas fa-sync-alt"></i></button>
 	<br><br>
 	
