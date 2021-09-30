@@ -20,6 +20,7 @@ liToogleMenuVertical.addEventListener("click", () => {
 			spanMenuVertical[0].style.visibility = "visible";
 			spanMenuVertical[1].style.visibility = "visible";
 			spanMenuVertical[2].style.visibility = "visible";
+			spanMenuVertical[3].style.visibility = "visible";
 		}, 250);
 		
 	}
@@ -34,6 +35,7 @@ liToogleMenuVertical.addEventListener("click", () => {
 		spanMenuVertical[0].style.visibility = "hidden";
 		spanMenuVertical[1].style.visibility = "hidden";
 		spanMenuVertical[2].style.visibility = "hidden";
+		spanMenuVertical[3].style.visibility = "hidden";
 	}
 });
 
@@ -63,5 +65,6 @@ toogleMenuVisivel.addEventListener("click", () => {
 		spanMenuVertical[0].style.visibility = "hidden";
 		spanMenuVertical[1].style.visibility = "hidden";
 		spanMenuVertical[2].style.visibility = "hidden";
+		spanMenuVertical[3].style.visibility = "hidden";
 	}
 });
