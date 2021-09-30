@@ -3,6 +3,6 @@
 // com isto, não haverá perigo da label estar por cima do conteúdo salvo caso a página
 // seja recarregada
 window.onload = () => {
-	checkLabel('labelLogin', document.getElementById('inputNome'));
+	checkLabel('labelLogin', document.getElementById('inputEmail'));
 	checkLabel('labelSenha', document.getElementById('inputSenha'));
 };
