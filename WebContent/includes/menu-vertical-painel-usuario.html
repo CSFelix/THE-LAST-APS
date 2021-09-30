@@ -22,21 +22,28 @@ Toogle Menu Mobile
 		<br>
 		<hr>
 		<br>
-
-		<li id="listaPosts">
-			<i class="fas fa-clipboard"></i>
-			<span class="spanBotaoMenuVertical">{{ opcaoListaPostsAtiva }}</span>
-		</li>
 		
-		<li id="listaUsuarios">
-			<i class="fas fa-address-book"></i>
-			<span class="spanBotaoMenuVertical">{{ opcaoListaUsuariosAtiva }}</span>
-		</li>
+		<a href="painel.jsp">
+			<li id="listaPosts">
+				<i class="fas fa-clipboard"></i>
+				<span class="spanBotaoMenuVertical">{{ opcaoListaPostsAtiva }}</span>
+			</li>
+		</a>
+		
+		<a href="painel.jsp">
+			<li id="listaUsuarios" class="active">
+				<i class="fas fa-address-book"></i>
+				<span class="spanBotaoMenuVertical">{{ opcaoListaUsuariosAtiva }}</span>
+			</li>
+		</a>
 
-		<li id="configuracoes" class="active">
-			<i class="fas fa-cog"></i>
-			<span class="spanBotaoMenuVertical">{{ opcaoConfiguracoesAtiva }}</span>
-		</li>
+
+		<a href="painel.jsp">
+			<li id="configuracoes">
+				<i class="fas fa-cog"></i>
+				<span class="spanBotaoMenuVertical">{{ opcaoConfiguracoesAtiva }}</span>
+			</li>
+		</a>
 
 		<br>
 		<hr>
