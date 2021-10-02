@@ -14,11 +14,13 @@ const painelInfo = document.getElementById("painelInfo");
 // exibição do painel foco ao carregar/recarregar a página
 if (sessionStorage.getItem("painel_foco") == "1") { 
 	painelListaPosts.style.display = "block";
+	BuscarDadosPostsSemFiltro();
 	ativarOpcaoMenu(listaPosts);
 }
 
 else if (sessionStorage.getItem("painel_foco") == "2") { 
 	painelListaUsuarios.style.display = "block";
+	BuscarDadosUsuariosSemFiltro();
 	ativarOpcaoMenu(listaUsuarios);
 }
 
@@ -43,6 +45,7 @@ listaPosts.addEventListener("click", () => {
 	
 	// ativar painel e foco na opção do menu vertical
 	painelListaPosts.style.display = "block";
+	BuscarDadosPostsSemFiltro();
 	ativarOpcaoMenu(listaPosts); 
 	
 	// session
@@ -58,6 +61,7 @@ listaUsuarios.addEventListener("click", () => {
 	
 	// ativar painel e foco na opção do menu vertical
 	painelListaUsuarios.style.display = "block";
+	BuscarDadosUsuariosSemFiltro();
 	ativarOpcaoMenu(listaUsuarios); 
 	
 	// session
