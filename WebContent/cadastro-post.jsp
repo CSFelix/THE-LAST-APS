@@ -41,4 +41,7 @@
 	<jsp:include page="includes/script-painel-post.html" />
 	
 	<!-- scripts não padrões nas demais páginas -->
+	
+	<!-- ajax -->
+	<script type="text/javascript" src="assets/js/ajax/ajax-cadastrar-post.js"></script>
 </html>

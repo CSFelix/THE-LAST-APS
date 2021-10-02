@@ -39,4 +39,7 @@
 	<jsp:include page="includes/script-painel-usuario.html" />
 	
 	<!-- scripts não padrões nas demais páginas -->
+	
+	<!-- ajax -->
+	<script type="text/javascript" src="assets/js/ajax/ajax-status-usuario.js"></script>
 </html>
