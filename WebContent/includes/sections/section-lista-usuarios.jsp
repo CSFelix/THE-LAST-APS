@@ -24,6 +24,7 @@
 	
 	<!-- tabela dos produtos -->
 	<table id="tabelaListaUsuarios" class="tabelaPrincipal" data-anijs="if: load, on: window, do: rubberBand animated">  
+	  	
 	  	<!-- header da tabela -->
 	 	<tr id="tabelaHeader">
 	 		<th>{{ trOpcoesAtiva }}</th>
@@ -34,6 +35,7 @@
 	    	<th>{{ trStatusAtiva }}</th>
 		</tr>
 		
+		<!-- 
 		<tr>
 			<td>
 				<button class="botao" data-anijs="if: mouseover, do: rubberBand animated">{{ trOpcaoAlterarAtiva }}</button>
@@ -66,6 +68,7 @@
 			<td>2021-09-28</td>
 			<td>1</td>
 		</tr>
+		-->
 	</table>
 
 	<br><br>

@@ -33,6 +33,7 @@
 	    	<th>{{ trStatusAtiva }}</th>
 		</tr>
 		
+		<!-- 
 		<tr>
 			<td>
 				<button class="botao" data-anijs="if: mouseover, do: rubberBand animated">{{ trOpcaoAlterarAtiva }}</button>
@@ -84,6 +85,7 @@
 			<td>2021-09-08</td>
 			<td>{{ trStatusDescartadoAtiva }}</td>
 		</tr>
+		-->
 	</table>
 
 	<br><br>

@@ -78,7 +78,7 @@
 	
 	<div class="sectionPainelContent flexSpace">
 		<a href="painel.jsp"><button class="botaoSecundario" data-anijs="if: mouseover, do: rubberBand animated">{{ botaoCancelarAtiva }}</button></a>
-		<button id="botaoSalvarPost" class="botao" data-anijs="if: mouseover, do: rubberBand animated">{{ botaoSalvarAtiva }}</button>
+		<button id="botaoAlterarPost" class="botao" data-anijs="if: mouseover, do: rubberBand animated">{{ botaoSalvarAtiva }}</button>
 	</div>
 	<br>
 	
