@@ -36,7 +36,7 @@ botaoSalvarUsuario.addEventListener("click", () => {
 		
 		// AJAX
 		params = "grauAutoridade=" + inputNivelSelecionadoUsuario.value
-		       + "&status=" + inputStatusSelecionadoUsuario.value
+		       + "&ativo=" + inputStatusSelecionadoUsuario.value
 		       + "&id=" + sessionStorage.getItem("idUsuario"); // previamente armazenado após cadastro ou login
 		
 		req = new XMLHttpRequest();
