@@ -33,7 +33,7 @@ botaoLogin.addEventListener("click", () => {
 		inputSenhaLogin.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// AJAX
-		params = "email=" + inputEmailLogin.value
+		params = "login=" + inputEmailLogin.value
 		       + "&senha=" + inputSenhaLogin.value; 
 		
 		req = new XMLHttpRequest();

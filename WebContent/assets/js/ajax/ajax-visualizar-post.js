@@ -11,7 +11,7 @@ var req;
 // informação deve estar previamente armazenada na session storage do navegador
 // para tal, o valor deve-ser armazenado a partir do momento em que o usuário
 // clica para ver a postagem
-params = "idPost=" + sessionStorage.getItem("idPost"); 
+params = "id=" + sessionStorage.getItem("idPost"); 
 
 // AJAX
 req = new XMLHttpRequest();

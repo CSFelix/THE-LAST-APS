@@ -61,7 +61,7 @@ botaoAlterarPost.addEventListener("click", () => {
 		       + "&mensagem=" + inputMensagemAlterarPost.value
 		       + "&endereco=" + inputEnderecoAlterarPost.value
 		       + "&dataCriacao=" + inputDataCriacaoAlterarPost.value
-		       + "&statusSelecionado=" + inputStatusSelecionadoAlterarPost.value
+		       + "&status=" + inputStatusSelecionadoAlterarPost.value
 		       + "&comentario=" + inputComentarioAlteraPost.value;
 		
 		req = new XMLHttpRequest();

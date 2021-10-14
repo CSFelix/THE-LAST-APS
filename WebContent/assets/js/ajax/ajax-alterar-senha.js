@@ -56,7 +56,7 @@ botaoAlterarSenha.addEventListener("click", () => {
 		inputConfirmarSenhaAlterarSenha.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// AJAX
-		params = "email=" + inputEmailAlterarSenha.value
+		params = "login=" + inputEmailAlterarSenha.value
 		       + "&senha=" + inputSenhaAlterarSenha.value;
 		
 		req = new XMLHttpRequest();

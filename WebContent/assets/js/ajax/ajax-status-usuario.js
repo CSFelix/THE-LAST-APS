@@ -35,7 +35,7 @@ botaoSalvarUsuario.addEventListener("click", () => {
 		inputStatusSelecionadoUsuario.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// AJAX
-		params = "nivelAutoridade=" + inputNivelSelecionadoUsuario.value
+		params = "grauAutoridade=" + inputNivelSelecionadoUsuario.value
 		       + "&status=" + inputStatusSelecionadoUsuario.value
 		       + "&id=" + sessionStorage.getItem("idUsuario"); // previamente armazenado após cadastro ou login
 		

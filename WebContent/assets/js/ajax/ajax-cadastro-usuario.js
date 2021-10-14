@@ -71,10 +71,10 @@ botaoCadastrar.addEventListener("click", () => {
 		inputAutorizacaoCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// AJAX
-		params = "email=" + inputEmailCadastro.value
+		params = "login=" + inputEmailCadastro.value
 			   + "&nome=" + inputNomeCadastro.value
 		       + "&senha=" + inputSenhaCadastro.value
-		       + "&autorizacao=" + inputAutorizacaoCadastro.value; 
+		       + "&grauAutoridade=" + inputAutorizacaoCadastro.value; 
 		
 		req = new XMLHttpRequest();
 		req.open("POST", "http://localhost:7777/", true);

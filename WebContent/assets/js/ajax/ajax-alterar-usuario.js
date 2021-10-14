@@ -35,7 +35,7 @@ botaoSalvarInfo.addEventListener("click", () => {
 		inputNomeInfo.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// AJAX
-		params = "email=" + inputEmailInfo.value
+		params = "login=" + inputEmailInfo.value
 		       + "&nome=" + inputNomeInfo.value
 		       + "&id=" + sessionStorage.getItem("idUsuario"); // previamente armazenado após cadastro ou login
 		
