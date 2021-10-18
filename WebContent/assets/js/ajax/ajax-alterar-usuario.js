@@ -37,10 +37,10 @@ botaoSalvarInfo.addEventListener("click", () => {
 		// AJAX
 		params = "login=" + inputEmailInfo.value
 		       + "&nome=" + inputNomeInfo.value
-		       + "&id=" + sessionStorage.getItem("idUsuario"); // previamente armazenado após cadastro ou login
+		       + "&id=" + localStorage("idUsuario");
 		
 		req = new XMLHttpRequest();
-		req.open("POST", "http://localhost:7777/", true);
+		req.open("POST", "http://localhost:7777/login-nome", true);
 		req.onreadystatechange = function() {
 			
 			// Servidor Fora do Ar
@@ -59,7 +59,7 @@ botaoSalvarInfo.addEventListener("click", () => {
 		
 		// Definição do header do método HTTP POST
 		// e envio dos parãmetros
-		req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+		req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
 		req.send(params);
 	}
 });
