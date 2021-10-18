@@ -57,7 +57,8 @@ botaoAlterarPost.addEventListener("click", () => {
 		inputStatusSelecionadoAlterarPost.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// AJAX
-		params = "titulo=" + inputTituloAlterarPost.value
+		params = "idPost=" + localStorage.getItem("idPost")
+		       + "&titulo=" + inputTituloAlterarPost.value
 		       + "&mensagem=" + inputMensagemAlterarPost.value
 		       + "&endereco=" + inputEnderecoAlterarPost.value
 		       + "&dataCriacao=" + inputDataCriacaoAlterarPost.value
@@ -65,7 +66,7 @@ botaoAlterarPost.addEventListener("click", () => {
 		       + "&comentario=" + inputComentarioAlteraPost.value;
 		
 		req = new XMLHttpRequest();
-		req.open("POST", "http://localhost:7777/", true);
+		req.open("POST", "http://localhost:7777/postagem", true);
 		req.onreadystatechange = function() {
 			
 			// Servidor Fora do Ar
@@ -76,7 +77,7 @@ botaoAlterarPost.addEventListener("click", () => {
 				
 				/* back deve retornar a id do Post a fim ded redirecionar usuário
 				 * à página de visualização */
-				window.location.href = "visualizar-post.jsp?idPost=" + this.responseText; 
+				window.location.href = "visualizar-post.jsp?idPost=" + this.responseText.id; 
 			}
 		};
 		
