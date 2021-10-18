@@ -83,7 +83,7 @@ botaoAlterarPost.addEventListener("click", () => {
 		
 		// Definição do header do método HTTP POST
 		// e envio dos parãmetros
-		req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+		req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
 		req.send(params);
 	}
 });
