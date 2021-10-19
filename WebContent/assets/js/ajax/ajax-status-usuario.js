@@ -1,8 +1,5 @@
 const botaoSalvarUsuario = document.getElementById("botaoSalvarUsuario");
-
-const inputNivelSelecionadoUsuario = document.getElementById("nivelSelecionado");
 const inputStatusSelecionadoUsuario = document.getElementById("statusSelecionado");
-
 const toastMessageUsuario = document.getElementById("toast");
 
 var mensagemErro;
@@ -13,12 +10,8 @@ var req;
 botaoSalvarUsuario.addEventListener("click", () => {
 	
 	// inputs não preenchidos
-	if (inputNivelSelecionadoUsuario.value == "" || inputStatusSelecionadoUsuario.value == "") {
-		
-		// checagem do input de título
-		if (inputNivelSelecionadoUsuario.value == "") { inputNivelSelecionadoUsuario.style.borderBottom = "4px solid red"; }
-		else { inputNivelSelecionadoUsuario.style.borderBottom = "4px solid var(--style-terciary-color)"; }
-		
+	if (inputStatusSelecionadoUsuario.value == "") {
+			
 		// checagem do input de mensagem
 		if (inputStatusSelecionadoUsuario.value == "") { inputStatusSelecionadoUsuario.style.borderBottom = "4px solid red"; }
 		else { inputStatusSelecionadoUsuario.style.borderBottom = "4px solid var(--style-terciary-color)"; }
@@ -31,16 +24,14 @@ botaoSalvarUsuario.addEventListener("click", () => {
 	else {
 		
 		// Reset na borderBottom dos inputs
-		inputNivelSelecionadoUsuario.style.borderBottom = "4px solid var(--style-terciary-color)";
 		inputStatusSelecionadoUsuario.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// AJAX
-		params = "grauAutoridade=" + inputNivelSelecionadoUsuario.value
-		       + "&ativo=" + inputStatusSelecionadoUsuario.value
-		       + "&id=" + sessionStorage.getItem("idUsuario"); // previamente armazenado após cadastro ou login
+		params = "ativo=" + inputStatusSelecionadoUsuario.value
+		          + "&id=" + sessionStorage.getItem("idUsuario");
 		
 		req = new XMLHttpRequest();
-		req.open("POST", "http://localhost:7777/", true);
+		req.open("POST", "http://localhost:3000/autoridade-update-status", true);
 		req.onreadystatechange = function() {
 			
 			// Servidor Fora do Ar
@@ -59,7 +50,7 @@ botaoSalvarUsuario.addEventListener("click", () => {
 		
 		// Definição do header do método HTTP POST
 		// e envio dos parãmetros
-		req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+		req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
 		req.send(params);
 	}
 });
