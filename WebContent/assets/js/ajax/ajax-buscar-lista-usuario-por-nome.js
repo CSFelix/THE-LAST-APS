@@ -18,10 +18,8 @@ function BuscarDadosUsuariosComFiltro() {
 	if (inputNomePesquisaFiltroNome.value != "") {
 		
 		// AJAX
-		params = "nome=" + inputNomePesquisaFiltroNome.value;
-		
 		req = new XMLHttpRequest();
-		req.open("POST", "http://localhost:7777/", true);
+		req.open("GET", "http://localhost:3000/autoridade/find-nome/" + inputNomePesquisaFiltroNome.value, true);
 		req.onreadystatechange = function() {
 				
 			//	Servidor Fora do Ar
@@ -40,7 +38,7 @@ function BuscarDadosUsuariosComFiltro() {
 			
 		// Definição do header do método HTTP POST
 		// e envio dos parãmetros
-		req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-		req.send(params);
+		req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
+		req.send();
 	}
 }
