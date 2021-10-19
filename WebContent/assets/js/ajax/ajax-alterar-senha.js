@@ -60,7 +60,7 @@ botaoAlterarSenha.addEventListener("click", () => {
 		       + "&senha=" + inputSenhaAlterarSenha.value;
 		
 		req = new XMLHttpRequest();
-		req.open("POST", "http://localhost:7777/update-login-senha", true);
+		req.open("POST", "http://localhost:3000/update-login-senha", true);
 		req.onreadystatechange = function() {
 			
 			// Servidor Fora do Ar
