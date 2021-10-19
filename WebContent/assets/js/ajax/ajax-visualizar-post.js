@@ -9,7 +9,7 @@ var req;
 
 // AJAX
 req = new XMLHttpRequest();
-req.open("GET", "http://localhost:3000//autoridade/" + localStorage.getItem("idPost"), true);
+req.open("GET", "http://localhost:3000/autoridade/" + localStorage.getItem("idPost"), true);
 req.onreadystatechange = function() {
 	
 	// Servidor Fora do Ar
