@@ -18,10 +18,8 @@ function BuscarDadosPostsComFiltro() {
 	if (inputTituloPesquisaFiltroTitulo.value != "") {
 		
 		// AJAX
-		params = "titulo=" + inputTituloPesquisaFiltroTitulo.value;
-		
 		req = new XMLHttpRequest();
-		req.open("POST", "http://localhost:7777/find-title/:filter", true);
+		req.open("GET", "http://localhost:7777/find-title/" + inputTituloPesquisaFiltroTitulo.value, true);
 		req.onreadystatechange = function() {
 				
 			//	Servidor Fora do Ar
@@ -41,6 +39,6 @@ function BuscarDadosPostsComFiltro() {
 		// Definição do header do método HTTP POST
 		// e envio dos parãmetros
 		req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
-		req.send(params);
+		req.send();
 	}
 }
