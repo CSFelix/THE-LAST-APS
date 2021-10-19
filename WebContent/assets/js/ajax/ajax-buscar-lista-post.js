@@ -14,7 +14,7 @@ function BuscarDadosPostsSemFiltro() {
 	
 	// AJAX
 	req = new XMLHttpRequest();
-	req.open("GET", "http://localhost:7777/postagem/all", true);
+	req.open("GET", "http://localhost:3000/postagem/all", true);
 	req.onreadystatechange = function() {
 			
 		//	Servidor Fora do Ar
