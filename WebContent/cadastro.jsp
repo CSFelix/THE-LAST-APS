@@ -64,20 +64,6 @@
 						<label id="labelConfirmarSenha" class="campoLabel">{{ labelConfirmarSenhaAtiva }}</label>
 						<p>🔒</p>&nbsp&nbsp<input type="password" name="confirmarSenha" id="inputConfirmarSenha" class="campoInput" onkeyup="checkLabel('labelConfirmarSenha', this)" onkeydown="checkLabel('labelConfirmarSenha', this)" required>
 					</div>
-					
-					<br><br>
-					<hr class="horizontalLine">
-					<br><br>
-					
-					<!-- nível de autorização -->
-					<div class="campoDivForm flexCenter">
-						<p>🔐 {{ labelNivelAutorizacaoAtiva }}</p>&nbsp&nbsp
-						
-						<select id="nivelSelecionado" name="nivelUsuario" class="campoInput">
-							<option selected value="1">{{ selectStatusAutoridadePublicaAtiva }}</option>
-							<option value="2">{{ selectStatusAdministradorAtiva }}</option>
-						</select>
-					</div>
 					<br><br>
 				</div>
 				
