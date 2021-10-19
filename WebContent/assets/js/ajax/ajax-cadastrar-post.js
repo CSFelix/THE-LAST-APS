@@ -47,7 +47,7 @@ botaoSalvarPost.addEventListener("click", () => {
 		       + "&endereco=" + inputEnderecoCadastrarPost.value;
 		
 		req = new XMLHttpRequest();
-		req.open("POST", "http://localhost:7777/", true);
+		req.open("POST", "http://localhost:3000/postagem", true);
 		req.onreadystatechange = function() {
 			
 			// Servidor Fora do Ar
@@ -64,7 +64,7 @@ botaoSalvarPost.addEventListener("click", () => {
 		
 		// Definição do header do método HTTP POST
 		// e envio dos parãmetros
-		req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+		req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
 		req.send(params);
 	}
 });
