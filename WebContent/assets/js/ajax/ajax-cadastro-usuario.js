@@ -4,7 +4,6 @@ const inputEmailCadastro = document.getElementById("inputEmail");
 const inputNomeCadastro = document.getElementById("inputNome");
 const inputSenhaCadastro = document.getElementById("inputSenha");
 const inputConfirmarSenhaCadastro = document.getElementById("inputConfirmarSenha");
-const inputAutorizacaoCadastro = document.getElementById("nivelSelecionado");
 
 const toastMessageCadastro = document.getElementById("toast");
 
@@ -17,8 +16,7 @@ botaoCadastrar.addEventListener("click", () => {
 	
 	// inputs não preenchidos
 	if (   inputEmailCadastro.value == "" || inputNomeCadastro.value == ""
-		|| inputSenhaCadastro.value == "" || inputConfirmarSenhaCadastro.value == ""
-		|| inputAutorizacaoCadastro.value == "") {
+		|| inputSenhaCadastro.value == "" || inputConfirmarSenhaCadastro.value == "") {
 		
 		// checagem do input de email
 		if (inputEmailCadastro.value == "") { inputEmailCadastro.style.borderBottom = "4px solid red"; }
@@ -36,10 +34,6 @@ botaoCadastrar.addEventListener("click", () => {
 		if (inputConfirmarSenhaCadastro.value == "") { inputConfirmarSenhaCadastro.style.borderBottom = "4px solid red"; }
 		else { inputConfirmarSenhaCadastro.style.borderBottom = "4px solid var(--style-terciary-color)"; }
 		
-		// checagem do input de autorização
-		if (inputAutorizacaoCadastro.value == "") { inputAutorizacaoCadastro.style.borderBottom = "4px solid red"; }
-		else { inputAutorizacaoCadastro.style.borderBottom = "4px solid var(--style-terciary-color)"; }
-		
 		// exibição da toast message
 		ExibirToastMessage(1);
 	}
@@ -50,7 +44,6 @@ botaoCadastrar.addEventListener("click", () => {
 		// reset dos demais campos
 		inputEmailCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
 		inputNomeCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
-		inputAutorizacaoCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// focus nos campos de senha e confirmar senha
 		inputSenhaCadastro.style.borderBottom = "4px solid red";
@@ -68,16 +61,14 @@ botaoCadastrar.addEventListener("click", () => {
 		inputNomeCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
 		inputSenhaCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
 		inputConfirmarSenhaCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
-		inputAutorizacaoCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// AJAX
 		params = "login=" + inputEmailCadastro.value
-			   + "&nome=" + inputNomeCadastro.value
-		       + "&senha=" + inputSenhaCadastro.value
-		       + "&grauAutoridade=" + inputAutorizacaoCadastro.value; 
+			  + "&nome=" + inputNomeCadastro.value
+		       	  + "&senha=" + inputSenhaCadastro.value; 
 		
 		req = new XMLHttpRequest();
-		req.open("POST", "http://localhost:7777/", true);
+		req.open("POST", "http://localhost:3000/autoridade", true);
 		req.onreadystatechange = function() {
 			
 			// Servidor Fora do Ar
