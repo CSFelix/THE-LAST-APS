@@ -39,17 +39,6 @@
 		<hr class="horizontalLine">
 		<br><br>
 		
-		<!-- nível de autoridade -->
-		<div class="campoDivForm flexCenter">
-			<p>🔐 {{ labelNivelAutorizacaoAtiva }}</p>&nbsp&nbsp
-						
-			<select id="nivelSelecionado" name="nivelUsuario" class="campoInput">
-				<option selected value="1">{{ selectStatusAutoridadePublicaAtiva }}</option>
-				<option value="2">{{ selectStatusAdministradorAtiva }}</option>
-			</select>
-		</div>
-		<br><br>
-		
 		<!-- status -->
 		<div class="campoDivForm flexCenter">
 			<p>🔐 {{ labelStatusAtiva }}</p>&nbsp&nbsp
