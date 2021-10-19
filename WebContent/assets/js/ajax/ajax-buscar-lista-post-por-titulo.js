@@ -19,7 +19,7 @@ function BuscarDadosPostsComFiltro() {
 		
 		// AJAX
 		req = new XMLHttpRequest();
-		req.open("GET", "http://localhost:7777/find-title/" + inputTituloPesquisaFiltroTitulo.value, true);
+		req.open("GET", "http://localhost:3000/find-title/" + inputTituloPesquisaFiltroTitulo.value, true);
 		req.onreadystatechange = function() {
 				
 			//	Servidor Fora do Ar
