@@ -66,7 +66,7 @@ botaoAlterarPost.addEventListener("click", () => {
 		       + "&comentario=" + inputComentarioAlteraPost.value;
 		
 		req = new XMLHttpRequest();
-		req.open("POST", "http://localhost:7777/postagem", true);
+		req.open("POST", "http://localhost:3000/postagem", true);
 		req.onreadystatechange = function() {
 			
 			// Servidor Fora do Ar
