@@ -40,7 +40,7 @@ botaoSalvarInfo.addEventListener("click", () => {
 		       + "&id=" + localStorage("idUsuario");
 		
 		req = new XMLHttpRequest();
-		req.open("POST", "http://localhost:7777/login-nome", true);
+		req.open("POST", "http://localhost:3000/login-nome", true);
 		req.onreadystatechange = function() {
 			
 			// Servidor Fora do Ar
