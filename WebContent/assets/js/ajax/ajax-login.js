@@ -37,7 +37,7 @@ botaoLogin.addEventListener("click", () => {
 		       + "&senha=" + inputSenhaLogin.value; 
 		
 		req = new XMLHttpRequest();
-		req.open("POST", "http://localhost:7777/", true);
+		req.open("POST", "http://localhost:3000/login", true);
 		req.onreadystatechange = function() {
 			
 			// Servidor Fora do Ar
