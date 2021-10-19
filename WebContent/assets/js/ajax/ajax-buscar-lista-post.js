@@ -14,7 +14,7 @@ function BuscarDadosPostsSemFiltro() {
 	
 	// AJAX
 	req = new XMLHttpRequest();
-	req.open("POST", "http://localhost:7777/", true);
+	req.open("GET", "http://localhost:7777/postagem/all", true);
 	req.onreadystatechange = function() {
 			
 		//	Servidor Fora do Ar
@@ -33,6 +33,6 @@ function BuscarDadosPostsSemFiltro() {
 		
 	// Definição do header do método HTTP POST
 	// e envio dos parãmetros
-	req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+	req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
 	req.send();
 }
