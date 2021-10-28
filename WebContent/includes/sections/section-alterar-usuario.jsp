@@ -30,6 +30,13 @@
 		</div>
 		<br><br>
 		
+		<!-- nível autoridade -->
+		<div class="campoDivForm flexCenter">
+			<label id="labelAutoridade" class="campoLabel labelAtiva">{{ labelAutoridadeAtiva }}</label>
+			<p>🏷️</p>&nbsp&nbsp<input type="text" name="autoridade" id="inputAutoridade" class="campoInput" required>
+		</div>
+		<br><br>
+		
 		<!-- data de criação -->
 		<div class="campoDivForm flexCenter">
 			<p>📅 {{ labelDataCriacaoAtiva }}</p>&nbsp&nbsp<input type="datetime-local" name="dataCriacao" id="inputDataCriacao" class="campoInput" readonly>
