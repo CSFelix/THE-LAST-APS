@@ -38,7 +38,14 @@
 					<!-- nome -->
 					<div class="campoDivForm flexCenter">
 						<label id="labelNome" class="campoLabel">{{ labelNomeAtiva }}</label>
-						<p>👤</p>&nbsp&nbsp<input type="text" name="nome" id="inputNome" class="campoInput" onkeyup="checkLabel('labelNome', this)" onkeydown="checkLabel('labelNome', this)" onkeypress="ApertarEnterFocus(event, inputSenha)" autofocus required>
+						<p>👤</p>&nbsp&nbsp<input type="text" name="nome" id="inputNome" class="campoInput" onkeyup="checkLabel('labelNome', this)" onkeydown="checkLabel('labelNome', this)" onkeypress="ApertarEnterFocus(event, inputAutoridade)" required>
+					</div>
+					<br><br>
+					
+					<!-- nível autoridade -->
+					<div class="campoDivForm flexCenter">
+						<label id="labelAutoridade" class="campoLabel">{{ labelAutoridadeAtiva }}</label>
+						<p>🏷️</p>&nbsp&nbsp<input type="text" name="autoridade" id="inputAutoridade" class="campoInput" onkeyup="checkLabel('labelAutoridade', this)" onkeydown="checkLabel('labelAutoridade', this)" onkeypress="ApertarEnterFocus(event, inputSenha)" required>
 					</div>
 					
 					<br><br>
