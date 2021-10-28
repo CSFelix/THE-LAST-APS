@@ -29,6 +29,10 @@ var vuePainelAlterarUsuario = new Vue({
 	  labelNomeEnglish: 'Name',
 	  labelNomeAtiva: '',
 	  
+	  labelAutoridadePortugues: 'Autoridade',
+	  labelAutoridadeEnglish: 'Authority',
+	  labelAutoridadeAtiva: '',
+	  
 	  labelDataCriacaoPortugues: 'Criado em',
 	  labelDataCriacaoEnglish: 'Created in',
 	  labelDataCriacaoAtiva: '',
@@ -77,6 +81,7 @@ const vueAtivarControladorIdiomaPainelAlterarUsuario = () => {
 	  
 	  vuePainelAlterarUsuario.labelEmailAtiva = vuePainelAlterarUsuario.labelEmailPortugues;
 	  vuePainelAlterarUsuario.labelNomeAtiva = vuePainelAlterarUsuario.labelNomePortugues;
+	  vuePainelAlterarUsuario.labelAutoridadeAtiva = vuePainelAlterarUsuario.labelAutoridadePortugues;
 	  vuePainelAlterarUsuario.labelDataCriacaoAtiva = vuePainelAlterarUsuario.labelDataCriacaoPortugues;
 	  vuePainelAlterarUsuario.labelNivelAutorizacaoAtiva = vuePainelAlterarUsuario.labelNivelAutorizacaoPortugues;
 	  vuePainelAlterarUsuario.labelStatusAtiva = vuePainelAlterarUsuario.labelStatusPortugues;
@@ -97,6 +102,7 @@ const vueAtivarControladorIdiomaPainelAlterarUsuario = () => {
 	  
 	  vuePainelAlterarUsuario.labelEmailAtiva = vuePainelAlterarUsuario.labelEmailEnglish;
 	  vuePainelAlterarUsuario.labelNomeAtiva = vuePainelAlterarUsuario.labelNomeEnglish;
+	  vuePainelAlterarUsuario.labelAutoridadeAtiva = vuePainelAlterarUsuario.labelAutoridadeEnglish;
 	  vuePainelAlterarUsuario.labelDataCriacaoAtiva = vuePainelAlterarUsuario.labelDataCriacaoEnglish;
 	  vuePainelAlterarUsuario.labelNivelAutorizacaoAtiva = vuePainelAlterarUsuario.labelNivelAutorizacaoEnglish;
 	  vuePainelAlterarUsuario.labelStatusAtiva = vuePainelAlterarUsuario.labelStatusEnglish;
