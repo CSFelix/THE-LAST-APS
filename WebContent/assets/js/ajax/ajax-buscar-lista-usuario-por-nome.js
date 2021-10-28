@@ -38,8 +38,7 @@ function BuscarDadosUsuariosComFiltro() {
 			
 		// Definição do header
 		// e envio dos parãmetros
-		// req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
-		req.setRequestHeader('Content-Type', 'application/json');
+		req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
 		req.send();
 	}
 }
