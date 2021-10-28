@@ -33,8 +33,10 @@ botaoLogin.addEventListener("click", () => {
 		inputSenhaLogin.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// AJAX
-		params = "login=" + inputEmailLogin.value
-		       + "&senha=" + inputSenhaLogin.value; 
+		params = {
+				login: inputEmailLogin.value,
+			    senha: inputSenhaLogin.value
+		}
 		
 		req = new XMLHttpRequest();
 		req.open("POST", "http://localhost:3000/login", true);
@@ -57,9 +59,9 @@ botaoLogin.addEventListener("click", () => {
 			}
 		};
 		
-		// Definição do header do método HTTP POST
+		// Definição do header
 		// e envio dos parãmetros
-		req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-		req.send(params);
+		req.setRequestHeader('Content-Type', 'application/json');
+		req.send(JSON.stringify(params));
 	}
 });

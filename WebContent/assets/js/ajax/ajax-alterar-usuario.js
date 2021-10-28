@@ -2,6 +2,7 @@ const botaoSalvarInfo = document.getElementById("botaoSalvar");
 
 const inputEmailInfo = document.getElementById("inputEmail");
 const inputNomeInfo = document.getElementById("inputNome");
+const inputAutoridadeInfo = document.getElementById("inputAutoridade");
 
 const toastMessageInfo = document.getElementById("toast");
 
@@ -13,7 +14,7 @@ var req;
 botaoSalvarInfo.addEventListener("click", () => {
 	
 	// inputs não preenchidos
-	if (inputEmailInfo.value == "" || inputNomeInfo.value == "") {
+	if (inputEmailInfo.value == "" || inputNomeInfo.value == "" || inputAutoridadeInfo.value == "") {
 		
 		// checagem do input de título
 		if (inputEmailInfo.value == "") { inputEmailInfo.style.borderBottom = "4px solid red"; }
@@ -22,6 +23,10 @@ botaoSalvarInfo.addEventListener("click", () => {
 		// checagem do input de mensagem
 		if (inputNomeInfo.value == "") { inputNomeInfo.style.borderBottom = "4px solid red"; }
 		else { inputNomeInfo.style.borderBottom = "4px solid var(--style-terciary-color)"; }
+		
+		// checagem do input de autoridade
+		if (inputAutoridadeInfo.value == "") { inputAutoridadeInfo.style.borderBottom = "4px solid red"; }
+		else { inputAutoridadeInfo.style.borderBottom = "4px solid var(--style-terciary-color)"; }
 		
 		// exibição da toast message
 		ExibirToastMessage(1);
@@ -33,11 +38,15 @@ botaoSalvarInfo.addEventListener("click", () => {
 		// Reset na borderBottom dos inputs
 		inputEmailInfo.style.borderBottom = "4px solid var(--style-terciary-color)";
 		inputNomeInfo.style.borderBottom = "4px solid var(--style-terciary-color)";
+		inputAutoridadeInfo.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// AJAX
-		params = "login=" + inputEmailInfo.value
-		       + "&nome=" + inputNomeInfo.value
-		       + "&id=" + localStorage("idUsuario");
+		params = {
+			    login: inputEmailInfo.value,
+			    nome: inputNomeInfo.value,
+			    grauAutoridade: inputAutoridadeInfo.value,
+			    id: localStorage("idUsuario"),
+		}
 		
 		req = new XMLHttpRequest();
 		req.open("POST", "http://localhost:3000/login-nome", true);
@@ -59,7 +68,8 @@ botaoSalvarInfo.addEventListener("click", () => {
 		
 		// Definição do header do método HTTP POST
 		// e envio dos parãmetros
-		req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
-		req.send(params);
+		//req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
+		req.setRequestHeader('Content-Type', 'application/json');
+		req.send(JSON.stringify(params));
 	}
 });

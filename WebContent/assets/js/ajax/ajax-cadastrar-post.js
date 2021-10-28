@@ -42,9 +42,11 @@ botaoSalvarPost.addEventListener("click", () => {
 		inputEnderecoCadastrarPost.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// AJAX
-		params = "titulo=" + inputTituloCadastrarPost.value
-		       + "&mensagem=" + inputMensagemCadastrarPost.value
-		       + "&endereco=" + inputEnderecoCadastrarPost.value;
+		params = {
+			    titulo: inputTituloCadastrarPost.value,
+			    mensagem: inputMensagemCadastrarPost.value,
+			    endereco: inputEnderecoCadastrarPost.value
+		}
 		
 		req = new XMLHttpRequest();
 		req.open("POST", "http://localhost:3000/postagem", true);
@@ -62,9 +64,10 @@ botaoSalvarPost.addEventListener("click", () => {
 			}
 		};
 		
-		// Definição do header do método HTTP POST
+		// Definição do header
 		// e envio dos parãmetros
-		req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
-		req.send(params);
+		// req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
+		req.setRequestHeader('Content-Type', 'application/json');
+		req.send(JSON.stringify(params));
 	}
 });

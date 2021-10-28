@@ -36,9 +36,10 @@ function BuscarDadosUsuariosComFiltro() {
 				}
 			};
 			
-		// Definição do header do método HTTP POST
+		// Definição do header
 		// e envio dos parãmetros
-		req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
+		// req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
+		req.setRequestHeader('Content-Type', 'application/json');
 		req.send();
 	}
 }

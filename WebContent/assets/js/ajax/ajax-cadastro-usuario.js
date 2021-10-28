@@ -2,6 +2,7 @@ const botaoCadastrar = document.getElementById("botaoCadastrar");
 
 const inputEmailCadastro = document.getElementById("inputEmail");
 const inputNomeCadastro = document.getElementById("inputNome");
+const inputAutoridadeCadastro = docuemnt.getElementById("inputAutoridade");
 const inputSenhaCadastro = document.getElementById("inputSenha");
 const inputConfirmarSenhaCadastro = document.getElementById("inputConfirmarSenha");
 
@@ -16,7 +17,8 @@ botaoCadastrar.addEventListener("click", () => {
 	
 	// inputs não preenchidos
 	if (   inputEmailCadastro.value == "" || inputNomeCadastro.value == ""
-		|| inputSenhaCadastro.value == "" || inputConfirmarSenhaCadastro.value == "") {
+		|| inputSenhaCadastro.value == "" || inputConfirmarSenhaCadastro.value == ""
+		|| inputAutoridadeCadastro.value == "") {
 		
 		// checagem do input de email
 		if (inputEmailCadastro.value == "") { inputEmailCadastro.style.borderBottom = "4px solid red"; }
@@ -25,6 +27,10 @@ botaoCadastrar.addEventListener("click", () => {
 		// checagem do input de nome
 		if (inputNomeCadastro.value == "") { inputNomeCadastro.style.borderBottom = "4px solid red"; }
 		else { inputNomeCadastro.style.borderBottom = "4px solid var(--style-terciary-color)"; }
+		
+		// checagem do input de autoridade
+		if (inputAutoridadeCadastro.value == "") { inputAutoridadeCadastro.style.borderBottom = "4px solid red"; }
+		else { inputAutoridadeCadastro.style.borderBottom = "4px solid var(--style-terciary-color)"; }
 		
 		// checagem do input de senha
 		if (inputSenhaCadastro.value == "") { inputSenhaCadastro.style.borderBottom = "4px solid red"; }
@@ -44,6 +50,7 @@ botaoCadastrar.addEventListener("click", () => {
 		// reset dos demais campos
 		inputEmailCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
 		inputNomeCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
+		inputAutoridadeCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// focus nos campos de senha e confirmar senha
 		inputSenhaCadastro.style.borderBottom = "4px solid red";
@@ -59,13 +66,18 @@ botaoCadastrar.addEventListener("click", () => {
 		// Reset na borderBottom dos inputs
 		inputEmailCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
 		inputNomeCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
+		inputAutoridadeCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
 		inputSenhaCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
 		inputConfirmarSenhaCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// AJAX
-		params = "login=" + inputEmailCadastro.value
-			  + "&nome=" + inputNomeCadastro.value
-		       	  + "&senha=" + inputSenhaCadastro.value; 
+		params =  {
+	            login: inputEmailCadastro.value,
+	            nome: inputNomeCadastro.value,
+	            senha: inputSenhaCadastro.value,
+	            grauAutoridade: inputAutoridadeCadastro.value,
+	            ativo: true
+	    }; 
 		
 		req = new XMLHttpRequest();
 		req.open("POST", "http://localhost:3000/autoridade", true);
@@ -88,9 +100,9 @@ botaoCadastrar.addEventListener("click", () => {
 			}
 		};
 		
-		// Definição do header do método HTTP POST
-		// e envio dos parãmetros
-		req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-		req.send(params);
+		// Definição do header
+		// e envio dos parâmetros
+		req.setRequestHeader('Content-Type', 'application/json');
+		req.send(JSON.stringify(params));
 	}
 });

@@ -56,8 +56,10 @@ botaoAlterarSenha.addEventListener("click", () => {
 		inputConfirmarSenhaAlterarSenha.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// AJAX
-		params = "login=" + inputEmailAlterarSenha.value
-		       + "&senha=" + inputSenhaAlterarSenha.value;
+		params = {
+			    login: inputEmailAlterarSenha.value,
+			    senha: inputSenhaAlterarSenha.value
+		}
 		
 		req = new XMLHttpRequest();
 		req.open("POST", "http://localhost:3000/update-login-senha", true);
@@ -77,9 +79,9 @@ botaoAlterarSenha.addEventListener("click", () => {
 			}
 		};
 		
-		// Definição do header do método HTTP POST
+		// Definição do header
 		// e envio dos parãmetros
-		req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-		req.send(params);
+		req.setRequestHeader('Content-Type', 'application/json');
+		req.send(JSON.stringify(params));
 	}
 });

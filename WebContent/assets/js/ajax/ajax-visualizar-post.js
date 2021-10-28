@@ -28,7 +28,7 @@ req.onreadystatechange = function() {
 	}
 };
 
-// Definição do header do método HTTP POST
+// Definição do header
 // e envio dos parãmetros
-req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+req.setRequestHeader('Content-Type', 'application/json');
 req.send();

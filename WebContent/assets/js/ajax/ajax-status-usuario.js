@@ -27,8 +27,10 @@ botaoSalvarUsuario.addEventListener("click", () => {
 		inputStatusSelecionadoUsuario.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// AJAX
-		params = "ativo=" + inputStatusSelecionadoUsuario.value
-		          + "&id=" + sessionStorage.getItem("idUsuario");
+		params = {
+			    ativo: inputStatusSelecionadoUsuario.value,
+			    id: sessionStorage.getItem("idUsuario")
+		}
 		
 		req = new XMLHttpRequest();
 		req.open("POST", "http://localhost:3000/autoridade-update-status", true);
@@ -48,9 +50,10 @@ botaoSalvarUsuario.addEventListener("click", () => {
 			}
 		};
 		
-		// Definição do header do método HTTP POST
+		// Definição do header
 		// e envio dos parãmetros
-		req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
-		req.send(params);
+		// req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
+		req.setRequestHeader('Content-Type', 'application/json');
+		req.send(JSON.stringify(params));
 	}
 });

@@ -57,13 +57,15 @@ botaoAlterarPost.addEventListener("click", () => {
 		inputStatusSelecionadoAlterarPost.style.borderBottom = "4px solid var(--style-terciary-color)";
 		
 		// AJAX
-		params = "idPost=" + localStorage.getItem("idPost")
-		       + "&titulo=" + inputTituloAlterarPost.value
-		       + "&mensagem=" + inputMensagemAlterarPost.value
-		       + "&endereco=" + inputEnderecoAlterarPost.value
-		       + "&dataCriacao=" + inputDataCriacaoAlterarPost.value
-		       + "&status=" + inputStatusSelecionadoAlterarPost.value
-		       + "&comentario=" + inputComentarioAlteraPost.value;
+		params =  {
+			    idPost: localStorage.getItem("idPost"),
+			    titulo: inputTituloAlterarPost.value,
+			    mensagem: inputMensagemAlterarPost.value,
+			    endereco: inputEnderecoAlterarPost.value,
+			    dataCriacao: inputDataCriacaoAlterarPost.value,
+			    status: inputStatusSelecionadoAlterarPost.value,
+			    comentario: inputComentarioAlteraPost.value
+		}
 		
 		req = new XMLHttpRequest();
 		req.open("POST", "http://localhost:3000/postagem", true);
@@ -81,9 +83,10 @@ botaoAlterarPost.addEventListener("click", () => {
 			}
 		};
 		
-		// Definição do header do método HTTP POST
+		// Definição do header
 		// e envio dos parãmetros
-		req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
-		req.send(params);
+		// req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
+		req.setRequestHeader('Content-Type', 'application/json');
+		req.send(JSON.stringify(params));
 	}
 });
