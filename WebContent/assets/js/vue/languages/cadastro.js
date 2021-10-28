@@ -17,6 +17,10 @@ var vueMainContent = new Vue({
     labelNomeEnglish: 'Your Name',
     labelNomeAtiva: '',
 
+    labelAutoridadePortugues: 'Autoridade',
+    labelAutoridadeEnglish: 'Authority',
+    labelAutoridadeAtiva: '',
+    
     labelSenhaPortugues: 'Sua Senha',
     labelSenhaEnglish: 'Your Password',
     labelSenhaAtiva: '',
@@ -62,6 +66,7 @@ const vueAtivarControladorIdiomaCadastro = () => {
 		
 		vueMainContent.labelEmailAtiva = vueMainContent.labelEmailPortugues;
 		vueMainContent.labelNomeAtiva = vueMainContent.labelNomePortugues;
+		vueMainContent.labelAutoridadeAtiva = vueMainContent.labelAutoridadePortugues;
 		vueMainContent.labelSenhaAtiva = vueMainContent.labelSenhaPortugues;
 		vueMainContent.labelConfirmarSenhaAtiva = vueMainContent.labelConfirmarSenhaPortugues;
 		vueMainContent.labelNivelAutorizacaoAtiva = vueMainContent.labelNivelAutorizacaoPortugues;
@@ -78,6 +83,7 @@ const vueAtivarControladorIdiomaCadastro = () => {
 		
 		vueMainContent.labelEmailAtiva = vueMainContent.labelEmailEnglish;
 		vueMainContent.labelNomeAtiva = vueMainContent.labelNomeEnglish;
+		vueMainContent.labelAutoridadeAtiva = vueMainContent.labelAutoridadeEnglish;
 		vueMainContent.labelSenhaAtiva = vueMainContent.labelSenhaEnglish;
 		vueMainContent.labelConfirmarSenhaAtiva = vueMainContent.labelConfirmarSenhaEnglish;
 		vueMainContent.labelNivelAutorizacaoAtiva = vueMainContent.labelNivelAutorizacaoEnglish;
