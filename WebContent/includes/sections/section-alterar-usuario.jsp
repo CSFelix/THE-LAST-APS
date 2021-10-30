@@ -33,7 +33,7 @@
 		<!-- nível autoridade -->
 		<div class="campoDivForm flexCenter">
 			<label id="labelAutoridade" class="campoLabel labelAtiva">{{ labelAutoridadeAtiva }}</label>
-			<p>🏷️</p>&nbsp&nbsp<input type="text" name="autoridade" id="inputAutoridade" class="campoInput" required>
+			<p>🏷️</p>&nbsp&nbsp<input type="text" name="autoridade" id="inputAutoridade" class="campoInput" readonly>
 		</div>
 		<br><br>
 		
@@ -51,7 +51,7 @@
 			<p>🔐 {{ labelStatusAtiva }}</p>&nbsp&nbsp
 						
 			<select id="statusSelecionado" name="statusUsuario" class="campoInput">
-				<option selected value="1">{{ selectStatusLiberadoAtiva }}</option>
+				<option value="1">{{ selectStatusLiberadoAtiva }}</option>
 				<option value="2">{{ selectStatusBloqueadoAtiva }}</option>
 			</select>
 		</div>

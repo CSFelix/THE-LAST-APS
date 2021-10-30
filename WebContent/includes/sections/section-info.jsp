@@ -28,7 +28,14 @@
 		<!-- nome -->
 		<div class="campoDivForm flexCenter" data-anijs="if: load, on: window, do: swing animated">
 			<label id="labelNome" class="campoLabel labelAtiva">{{ labelNomeAtiva }}</label>
-			<p>📛</p>&nbsp&nbsp<input type="text" name="nome" id="inputNome" class="campoInput campoDesativado" onkeyup="checkLabel('labelNome', this)" onkeydown="checkLabel('labelNome', this)" onkeypress="ApertarEnterCliqueBotao(event, botaoSalvar)" autofocus readonly>
+			<p>📛</p>&nbsp&nbsp<input type="text" name="nome" id="inputNome" class="campoInput campoDesativado" onkeyup="checkLabel('labelNome', this)" onkeydown="checkLabel('labelNome', this)" onkeypress="ApertarEnterFocus(event, inputAutoridade)" autofocus readonly>
+		</div>
+		<br><br>
+		
+		<!-- nível autoridade -->
+		<div class="campoDivForm flexCenter" data-anijs="if: load, on: window, do: swing animated">
+			<label id="labelAutoridade" class="campoLabel labelAtiva">{{ labelAutoridadeAtiva }}</label>
+			<p>🏷️</p>&nbsp&nbsp<input type="text" name="autoridade" id="inputAutoridade" class="campoInput campoDesativado" onkeyup="checkLabel('labelAutoridade', this)" onkeydown="checkLabel('labelAutoridade', this)" onkeypress="ApertarEnterCliqueBotao(event, botaoSalvar)" required>
 		</div>
 		<br><br>
 	</div>

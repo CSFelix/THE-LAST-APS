@@ -36,8 +36,6 @@
 		<!-- 
 		<tr>
 			<td>
-				<button class="botao" data-anijs="if: mouseover, do: rubberBand animated">{{ trOpcaoAlterarAtiva }}</button>
-				&nbsp&nbsp&nbsp
 				<button class="botao" data-anijs="if: mouseover, do: rubberBand animated">{{ trOpcaoAvaliarAtiva }}</button>
 				&nbsp&nbsp&nbsp
 				<button class="botao" data-anijs="if: mouseover, do: rubberBand animated">{{ trOpcaoVisualizarAtiva }}</button>
