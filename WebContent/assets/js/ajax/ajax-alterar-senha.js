@@ -62,7 +62,7 @@ botaoAlterarSenha.addEventListener("click", () => {
 		}
 		
 		req = new XMLHttpRequest();
-		req.open("POST", "http://localhost:3000/update-login-senha", true);
+		req.open("PUT", "http://localhost:3000/update-login-senha", true);
 		req.onreadystatechange = function() {
 			
 			// Servidor Fora do Ar
@@ -72,9 +72,7 @@ botaoAlterarSenha.addEventListener("click", () => {
 			else {
 				
 				// Email não cadastrado no banco de dados
-				if (this.responseText.includes("0")) { ExibirToastMessage(6); }
-				
-				// Alteração de senha efetuada com sucesso
+				if (JSON.parse(this.responseText).status == 500) { ExibirToastMessage(6); }
 				else { window.location.href = "operacao-realizada.jsp"; }
 			}
 		};

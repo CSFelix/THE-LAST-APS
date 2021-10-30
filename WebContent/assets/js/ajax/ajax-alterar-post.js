@@ -14,6 +14,11 @@ var mensagemErro;
 var params;
 var req;
 
+
+// Captura do Parâmetro
+var url = new URLSearchParams(window.location.search);
+var id = url.get('idPost');
+
 // clique no botão de cadastro de post
 botaoAlterarPost.addEventListener("click", () => {
 	
@@ -58,7 +63,7 @@ botaoAlterarPost.addEventListener("click", () => {
 		
 		// AJAX
 		params =  {
-			    idPost: localStorage.getItem("idPost"),
+			    idPost: id,
 			    titulo: inputTituloAlterarPost.value,
 			    mensagem: inputMensagemAlterarPost.value,
 			    endereco: inputEnderecoAlterarPost.value,
@@ -79,7 +84,7 @@ botaoAlterarPost.addEventListener("click", () => {
 				
 				/* back deve retornar a id do Post a fim ded redirecionar usuário
 				 * à página de visualização */
-				window.location.href = "visualizar-post.jsp?idPost=" + this.responseText.id; 
+				window.location.href = "visualizar-post.jsp?idPost=" + JSON.parse(this.responseText).id; 
 			}
 		};
 		

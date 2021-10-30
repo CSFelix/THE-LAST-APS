@@ -7,9 +7,13 @@ const inputComentarioVisualizarPost = document.getElementById("inputComentario")
 var params;
 var req;
 
+// Captura do Parâmetro
+var url = new URLSearchParams(window.location.search);
+var id = url.get('idPost');
+
 // AJAX
 req = new XMLHttpRequest();
-req.open("GET", "http://localhost:3000/autoridade/" + localStorage.getItem("idPost"), true);
+req.open("GET", "http://localhost:3000/postagem/" + id, true);
 req.onreadystatechange = function() {
 	
 	// Servidor Fora do Ar
@@ -17,14 +21,13 @@ req.onreadystatechange = function() {
 	
 	// Busca das Informações Efetuada com Sucesso
 	else { 
-		
-		/* To-Do: ver como que informações virão do back e atribuir valores aos campos */
-		inputTituloVisualizarPost.value;
-		inputMensagemVisualizarPost.value;
-		inputEnderecoVisualizarPost.value;
-		inputDataCriacaoVisualizarPost.value;
-		inputStatusSelecionadoVisualizarPost.value;
-		inputComentarioVisualizarPost.value;
+		inputTituloVisualizarPost.value = JSON.parse(this.responseText).titulo;
+		inputMensagemVisualizarPost.value = JSON.parse(this.responseText).mensagem;
+		inputEnderecoVisualizarPost.value = JSON.parse(this.responseText).endereco;
+		inputDataCriacaoVisualizarPost.value = JSON.parse(this.responseText).dataCriacao;
+		inputStatusSelecionadoVisualizarPost.value = JSON.parse(this.responseText).status.nome;
+		inputComentarioVisualizarPost.value = JSON.parse(this.responseText).comentario;
+		sessionStorage.setItem(JSON.parse(this.responseText).id);
 	}
 };
 

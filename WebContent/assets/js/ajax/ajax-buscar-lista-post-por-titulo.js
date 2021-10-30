@@ -21,7 +21,7 @@ function BuscarDadosPostsComFiltro() {
 		req = new XMLHttpRequest();
 		req.open("GET", "http://localhost:3000/find-title/" + inputTituloPesquisaFiltroTitulo.value, true);
 		req.onreadystatechange = function() {
-				
+			
 			//	Servidor Fora do Ar
 			if (req.readyState != 4 || req.status != 200) {  }
 				
@@ -32,7 +32,18 @@ function BuscarDadosPostsComFiltro() {
 					if (this.responseText.includes("0")) { ExibirToastMessage(3); }
 					
 					// Alteração Efetuada com sucesso
-					else { tabelaListaPostagensFiltroTitulo.innerHTML = this.responseText; }
+					else { 
+						var dados = JSON.parse(this.responseText);
+						
+						for (i = 0; i < dados.length; i++) {
+							tabelaListaPostagens.innerHTML = "<tr>"
+								   						   + "	<td><button onclick='RedirecionarAlterarPost(this)' class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>{{ trOpcaoAvaliarAtiva }}</button>&nbsp&nbsp&nbsp<button class='botao' data-anijs='if: mouseover, do: rubberBand animated'>{{ trOpcaoVisualizarAtiva }}</button></td>"
+								   						   + "	<td>" + dados[i].titulo + "</td>"
+								   						   + "	<td>" + dados[i].dataCriacao + "</td>"
+								   						   + "	<td>" + dados[i].status + "</td>"
+								   						   + "</tr>";
+						}
+					}
 				}
 			};
 			

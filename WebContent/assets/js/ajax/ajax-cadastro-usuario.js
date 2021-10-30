@@ -69,6 +69,7 @@ botaoCadastrar.addEventListener("click", () => {
 		inputAutoridadeCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
 		inputSenhaCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
 		inputConfirmarSenhaCadastro.style.borderBottom = "4px solid var(--style-terciary-color)";
+
 		
 		// AJAX
 		params =  {
@@ -88,15 +89,8 @@ botaoCadastrar.addEventListener("click", () => {
 			
 			// Falha no Cadastro ou Efetuação com Sucesso
 			else {
-				
-				// Email já cadastrado por outro usuário
-				if (this.responseText.includes("0")) { ExibirToastMessage(4); }
-				
-				// Cadastro efetuado com sucesso
-				else { 
-					sessionStorage.setItem("painel_foco", "1");
-					window.location.href = "painel.jsp";  
-				}
+				if (JSON.parse(this.responseText).status == 500) { ExibirToastMessage(4); }
+                else { window.location.href = "index.jsp"; }
 			}
 		};
 		

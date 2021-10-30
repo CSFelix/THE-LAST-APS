@@ -10,6 +10,11 @@ var mensagemErro;
 var params;
 var req;
 
+// atribuição aos valores do input ao carregar o painel
+inputEmailInfo.value = sessionStorage.getItem("login");
+inputNomeInfo.value = sessionStorage.getItem("nome");
+inputAutoridadeInfo.value = sessionStorage.getItem("grauAutoridade");
+
 // clique no botão de alteração de usuário
 botaoSalvarInfo.addEventListener("click", () => {
 	
@@ -45,7 +50,7 @@ botaoSalvarInfo.addEventListener("click", () => {
 			    login: inputEmailInfo.value,
 			    nome: inputNomeInfo.value,
 			    grauAutoridade: inputAutoridadeInfo.value,
-			    id: localStorage("idUsuario"),
+			    id: sessionStorage.getItem("idUsuario"),
 		}
 		
 		req = new XMLHttpRequest();
@@ -62,7 +67,14 @@ botaoSalvarInfo.addEventListener("click", () => {
 				if (this.responseText.includes("0")) { ExibirToastMessage(8); }
 				
 				// Alteração Efetuada com sucesso
-				else { ExibirToastMessage(4); }
+				else { 
+					
+					sessionStorage.setItem("login", inputEmailInfo.value);
+					sessionStorage.setItem("nome", inputNomeInfo.value);
+					sessionStorage.setItem("grauAutoridade", inputAutoridadeInfo.value);
+					
+					ExibirToastMessage(4); 
+				}
 			}
 		};
 		

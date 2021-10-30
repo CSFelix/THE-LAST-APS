@@ -49,10 +49,14 @@ botaoLogin.addEventListener("click", () => {
 			else {
 				
 				// Falha no Login- Email e/ou Senha incorretos
-				if (this.responseText.includes("0")) { ExibirToastMessage(5); }
+				if (JSON.parse(this.responseText).status == 500) { ExibirToastMessage(5); }
 				
 				// Login efetuado com sucesso
 				else { 
+					session.Storage.setItem("idUsuario", JSON.parse(this.responseText).id);
+					sessionStorage.setItem("login", JSON.parse(this.responseText).login);
+					sessionStorage.setItem("nome", JSON.parse(this.responseText).nome);
+					sessionStorage.setItem("grauAutoridade", JSON.parse(this.responseText).grauAutoridade);
 					sessionStorage.setItem("painel_foco", "1");
 					window.location.href = "painel.jsp";  
 				}

@@ -1,10 +1,27 @@
 const botaoSalvarUsuario = document.getElementById("botaoSalvarUsuario");
+
+const inputEmail = document.getElementById("inputEmail");
+const inputNome = document.getElementById("inputNome");
+const inputAutoridade = document.getElementById("inputAutoridade");
+const inputDataCriacao = document.getElementById("inputDataCriacao");
 const inputStatusSelecionadoUsuario = document.getElementById("statusSelecionado");
+
 const toastMessageUsuario = document.getElementById("toast");
 
 var mensagemErro;
 var params;
 var req;
+
+// Captura do Parâmetro
+var url = new URLSearchParams(window.location.search);
+var id = url.get('idUsuario');
+
+// definição dos valores dos inputs ao carregar página
+inputEmail.value = sessionStorage.getItem("loginAlterar");
+inputNome.value = sessionStorage.getItem("nomeAlterar");
+inputAutoridade.value = sessionStorage.getItem("grauAutoridadeAlterar");
+inputDataCriacao.value = sessionStorage.getItem("dataCriacaoAlterar");
+inputStatusSelecionadoUsuario.value = sessionStorage.getItem("statusAlterar");
 
 // clique no botão de alteração de status e nível de acesso do usuário
 botaoSalvarUsuario.addEventListener("click", () => {
@@ -29,7 +46,7 @@ botaoSalvarUsuario.addEventListener("click", () => {
 		// AJAX
 		params = {
 			    ativo: inputStatusSelecionadoUsuario.value,
-			    id: sessionStorage.getItem("idUsuario")
+			    id: id
 		}
 		
 		req = new XMLHttpRequest();

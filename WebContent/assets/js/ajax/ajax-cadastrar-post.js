@@ -60,7 +60,7 @@ botaoSalvarPost.addEventListener("click", () => {
 				
 				/* back deve retornar a id do Post a fim ded redirecionar usuário
 				 * à página de visualização */
-				window.location.href = "visualizar-post.jsp?idPost=" + this.responseText; 
+				window.location.href = "visualizar-post.jsp?idPost=" + JSON.parse(this.responseText).id; 
 			}
 		};
 		
