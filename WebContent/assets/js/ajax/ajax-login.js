@@ -53,7 +53,7 @@ botaoLogin.addEventListener("click", () => {
 				
 				// Login efetuado com sucesso
 				else { 
-					session.Storage.setItem("idUsuario", JSON.parse(this.responseText).id);
+					sessionStorage.setItem("idUsuario", JSON.parse(this.responseText).id);
 					sessionStorage.setItem("login", JSON.parse(this.responseText).login);
 					sessionStorage.setItem("nome", JSON.parse(this.responseText).nome);
 					sessionStorage.setItem("grauAutoridade", JSON.parse(this.responseText).grauAutoridade);
