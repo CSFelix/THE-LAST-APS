@@ -64,7 +64,7 @@ botaoSalvarInfo.addEventListener("click", () => {
 			else {
 				
 				// Email já cadastrado por outro usuário
-				if (this.responseText.includes("0")) { ExibirToastMessage(8); }
+				if (JSON.parse(this.responseText).status == 500) { ExibirToastMessage(8); }
 				
 				// Alteração Efetuada com sucesso
 				else { 
@@ -73,7 +73,31 @@ botaoSalvarInfo.addEventListener("click", () => {
 					sessionStorage.setItem("nome", inputNomeInfo.value);
 					sessionStorage.setItem("grauAutoridade", inputAutoridadeInfo.value);
 					
-					ExibirToastMessage(4); 
+					// processamento inputs
+					disablerInputNome.classList.add("campoDesativado");
+					disablerInputEmail.classList.add("campoDesativado");
+					disablerInputAutoridade.classList.add("campoDesativado");
+
+					disablerInputNome.readOnly = true;
+					disablerInputEmail.readOnly = true;
+					disablerInputAutoridade.readOnly = true;
+
+					disablerInputNome.style.borderBottom = "4px solid var(--style-terciary-color)";
+					disablerInputEmail.style.borderBottom = "4px solid var(--style-terciary-color)";
+					disablerInputAutoridade.style.borderBottom = "4px solid var(--style-terciary-color)";
+					
+					// processamento botões
+					disablerBotaoCancelar.classList.add("botaoDesativado");
+					disablerBotaoSalvar.classList.add("botaoDesativado");
+	
+					disablerBotaoCancelar.disabled = true;
+					disablerBotaoSalvar.disabled = true;
+	
+					// processamento editar
+					botaoEditar.classList.remove("botaoDesativado");
+					botaoEditar.disabled = false;
+					
+					ExibirToastMessage(8); 
 				}
 			}
 		};
