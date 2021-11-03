@@ -24,19 +24,19 @@ function BuscarDadosPostsSemFiltro() {
 			else {
 				
 				// Falha Interna
-				if (this.responseText.includes("0")) { ExibirToastMessage(3); }
+				if (JSON.parse(this.responseText).status == 500) { ExibirToastMessage(3); }
 				
 				// Alteração Efetuada com sucesso
 				else { 
 					var dados = JSON.parse(this.responseText);
 					
 					for (i = 0; i < dados.length; i++) {
-						tabelaListaPostagens.innerHTML = "<tr>"
-							   						   + "	<td><button onclick='RedirecionarAlterarPost(this)' class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>{{ trOpcaoAvaliarAtiva }}</button>&nbsp&nbsp&nbsp<button class='botao' data-anijs='if: mouseover, do: rubberBand animated'>{{ trOpcaoVisualizarAtiva }}</button></td>"
-							   						   + "	<td>" + dados[i].titulo + "</td>"
-							   						   + "	<td>" + dados[i].dataCriacao + "</td>"
-							   						   + "	<td>" + dados[i].status + "</td>"
-							   						   + "</tr>";
+						tabelaListaPostagens.innerHTML += "<tr>"
+										+ "	<td><button onclick='RedirecionarAlterarPost(this)' class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>Rate / Avaliar</button>&nbsp&nbsp&nbsp<button class='botao' data-anijs='if: mouseover, do: rubberBand animated'>View / Visualizar</button></td>"
+								   		+ "	<td>" + dados[i].titulo + "</td>"
+								   		+ "	<td>" + dados[i].dataCriacao + "</td>"
+								   		+ "	<td>" + dados[i].status.nome + "</td>"
+								   		+ "</tr>";
 					}
 				}
 			}
