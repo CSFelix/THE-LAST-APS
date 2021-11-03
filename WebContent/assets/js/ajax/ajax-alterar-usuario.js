@@ -54,7 +54,7 @@ botaoSalvarInfo.addEventListener("click", () => {
 		}
 		
 		req = new XMLHttpRequest();
-		req.open("POST", "http://localhost:3000/login-nome", true);
+		req.open("POST", "http://localhost:3000/autoridade", true);
 		req.onreadystatechange = function() {
 			
 			// Servidor Fora do Ar
