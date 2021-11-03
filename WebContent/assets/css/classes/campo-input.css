@@ -2,7 +2,7 @@
 	width: 250px; padding: 11px 8px 6px 8px;
 	color: var(--cor-fundo-secundario); border-bottom: solid 4px var(--style-terciary-color);
 	line-height: 15px; font-size: 12px; transition: 240ms ease; border-radius: 5px;
-	background: var(--background-opacity-color);
+	background: var(--section-background-color);
 }
 
 .campoInput:focus, .campoInput:active { 

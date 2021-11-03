@@ -13,7 +13,7 @@
 
 .botaoSecundario {
 	border-radius: 5px; outline: none; color: var(--style-primary-color);
-	background: var(--background-color); padding: 5px; font-size: 15px; border: none;
+	background: var(--section-background-color); padding: 5px; font-size: 15px; border: none;
 	border: 2px solid var(--style-primary-color);
 }
 
