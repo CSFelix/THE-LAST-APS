@@ -54,10 +54,10 @@
 			<p>⭐ {{ labelStatusAtiva }}</p>&nbsp&nbsp
 			
 			<select id="statusSelecionado" name="statusPost" class="campoInput">
-				<option selected value="Pendente">{{ selectStatusPendenteAtiva }}</option>
-				<option value="Em avaliação">{{ selectStatusAvaliandoAtiva }}</option>
-				<option value="Concluido">{{ selectStatusFechadoAtiva }}</option>
-				<option value="Descartado">{{ selectStatusDescartadoAtiva }}</option>
+				<option selected value="7a8e54ba-7cf0-40c1-99ed-dea1506f0db0">{{ selectStatusPendenteAtiva }}</option>
+				<option value="9e22cfca-8f27-4c59-8956-ca31a87bc2e9">{{ selectStatusAvaliandoAtiva }}</option>
+				<option value="1f2be79a-f0af-44a4-88df-2025db61fa05">{{ selectStatusFechadoAtiva }}</option>
+				<option value="75459812-a809-4b99-ae09-8bf01dc01c4c">{{ selectStatusDescartadoAtiva }}</option>
 			</select>
 		</div>
 		<br><br>
