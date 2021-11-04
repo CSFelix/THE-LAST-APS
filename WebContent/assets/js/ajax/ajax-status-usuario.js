@@ -16,6 +16,29 @@ var req;
 var url = new URLSearchParams(window.location.search);
 var id = url.get('idUsuario');
 
+//AJAX
+req = new XMLHttpRequest();
+req.open("GET", "http://localhost:3000/autoridade/find-by-id/" + id, true);
+req.onreadystatechange = function() {
+	
+	// Servidor Fora do Ar
+	if (req.readyState != 4 || req.status != 200) {  }
+	
+	// Busca das Informações Efetuada com Sucesso
+	else { 
+		inputEmail.value = JSON.parse(this.responseText).titulo;
+		inputNome.value = JSON.parse(this.responseText).mensagem;
+		inputAutoridade.value = JSON.parse(this.responseText).endereco;
+		inputDataCriacao.value = JSON.parse(this.responseText).dataCriacao;
+		inputStatusSelecionadoUsuario.value = JSON.parse(this.responseText).status.nome;
+	}
+};
+
+// Definição do header
+// e envio dos parãmetros
+req.setRequestHeader('Content-Type', 'application/json');
+req.send();
+
 // definição dos valores dos inputs ao carregar página
 inputEmail.value = sessionStorage.getItem("loginAlterar");
 inputNome.value = sessionStorage.getItem("nomeAlterar");
@@ -60,7 +83,7 @@ botaoSalvarUsuario.addEventListener("click", () => {
 			else {
 				
 				// Falha interna
-				if (this.responseText.includes("0")) {  }
+				if (JSON.parse(this.responseText).status == 500) {  }
 				
 				// Alteração Efetuada com sucesso
 				else { window.location.href = "painel.jsp"; }
