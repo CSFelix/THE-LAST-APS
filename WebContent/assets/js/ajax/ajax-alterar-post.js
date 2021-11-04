@@ -93,7 +93,7 @@ botaoAlterarPost.addEventListener("click", () => {
 			    endereco: inputEnderecoAlterarPost.value,
 			    dataCriacao: inputDataCriacaoAlterarPost.value,
 			    status: inputStatusSelecionadoAlterarPost.value,
-			    comentario: inputComentarioAlteraPost.value
+			     comentario: inputComentarioAlterarPost.value
 		}
 		
 		req = new XMLHttpRequest();
