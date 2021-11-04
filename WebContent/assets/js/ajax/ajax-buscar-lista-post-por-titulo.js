@@ -35,13 +35,32 @@ function BuscarDadosPostsComFiltro() {
 					else { 
 						var dados = JSON.parse(this.responseText);
 						
-						for (i = 0; i < dados.length; i++) {
-							tabelaListaPostagens.innerHTML += "<tr>"
-											+ "	<td><button onclick='RedirecionarAlterarPost(this)' class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>Rate / Avaliar</button>&nbsp&nbsp&nbsp<button class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>View / Visualizar</button></td>"
-								   			+ "	<td>" + dados[i].titulo + "</td>"
-								   			+ "	<td>" + dados[i].dataCriacao + "</td>"
-								   			+ "	<td>" + dados[i].status.nome + "</td>"
-								   			+ "</tr>";
+						// há posts cadastrados
+						if (dados.length > 0) {
+							for (i = 0; i < dados.length; i++) {
+								tabelaListaPostagens.innerHTML = "<tr id='tabelaHeader'>"
+															   + "   <th>" + vuePainelListaPosts.trOpcoesAtiva + "</th>"
+								   							   + "   <th>" + vuePainelListaPosts.trTituloAtiva + "</th>"
+								   							   + "   <th>" + vuePainelListaPosts.trCriacaoAtiva + "</th>"
+								   							   + "   <th>" + vuePainelListaPosts.trStatusAtiva + "</th>"
+								   							   + "</tr>"
+															   + "<tr>"
+									   						   + "	<td><button onclick='RedirecionarAlterarPost(this)' class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>" + vuePainelListaPosts.trOpcaoAvaliarAtiva + "</button>&nbsp&nbsp&nbsp<button onclick='RedirecionarVisualizarPost(this)' class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>" + vuePainelListaPosts.trOpcaoVisualizarAtiva + "</button></td>"
+									   						   + "	<td>" + dados[i].titulo + "</td>"
+									   						   + "	<td>" + FormatarDataHoraListaPost(dados[i].dataCriacao) + "</td>"
+									   						   + "	<td>" + dados[i].status.nome + "</td>"
+									   						   + "</tr>";
+							}
+						}
+						
+						// não há posts cadastrados
+						else {
+							tabelaListaPostagens.innerHTML = "<tr id='tabelaHeader'>"
+								   						   + "   <th>" + vuePainelListaPosts.trOpcoesAtiva + "</th>"
+								   						   + "   <th>" + vuePainelListaPosts.trTituloAtiva + "</th>"
+								   						   + "   <th>" + vuePainelListaPosts.trCriacaoAtiva + "</th>"
+								   						   + "   <th>" + vuePainelListaPosts.trStatusAtiva + "</th>"
+								   						   + "</tr>";
 						}
 					}
 				}

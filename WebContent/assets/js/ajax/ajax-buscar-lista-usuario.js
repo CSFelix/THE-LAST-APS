@@ -9,6 +9,13 @@ var req;
 // clique no botão de busca de usuários
 botaoAtualizarTabelaListaUsuarios.addEventListener("click", () => { BuscarDadosUsuariosSemFiltro(); });
 
+//função para formatação de data / hora
+//TO-DO: pegar como informação vem com o guilherme para eu depois montar a formatação
+function FormatarDataHoraListaUsuarios(data_hora) {
+	data_hora_transformada = data_hora;
+	return data_hora_transformada;
+}
+
 // função para busca dos dados
 function BuscarDadosUsuariosSemFiltro() {
 	
@@ -30,15 +37,39 @@ function BuscarDadosUsuariosSemFiltro() {
 				else { 
 					var dados = JSON.parse(this.responseText);
 					
-					for (i = 0; i < dados.length; i++) {
-						tabelaListaUsuarios.innerHTML += "<tr>"
-							+ "	<td><button onclick='RedirecionarAlterarUsuario(this)' class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>Update / Alterar</button></td>"
-							   						   + "	<td>" + dados[i].nome + "</td>"
-							   						   + "	<td>" + dados[i].login + "</td>"
-							   						   + "	<td>" + dados[i].grauAutoridade + "</td>"
-							   						   + "	<td>" + dados[i].dataCriada + "</td>"
-							   						   + "	<td>" + dados[i].ativo + "</td>"
-							   						   + "</tr>";
+					// há posts cadastrados
+					if (dados.lenght > 0) {
+						for (i = 0; i < dados.length; i++) {
+							
+							tabelaListaUsuarios.innerHTML = "<tr id='tabelaHeader'>"
+														   + "  <th>" + vuePainelListaUsuarios.trOpcoesAtiva + "</th>"
+														   + "  <th>" + vuePainelListaUsuarios.trNomeAtiva + "</th>"
+														   + "  <th>" + vuePainelListaUsuarios.trEmailAtiva + "</th>"
+														   + "  <th>" + vuePainelListaUsuarios.trNivelAutorizacaoAtiva + "</th>"
+														   + "  <th>" + vuePainelListaUsuarios.trDataCriacaoAtiva + "</th>"
+														   + "  <th>" + vuePainelListaUsuarios.trStatusAtiva + "</th>"
+														   + "</tr>"
+														   + "<tr>"
+														   + "	<td><button onclick='RedirecionarAlterarUsuario(this)' class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>" + vuePainelListaUsuarios.trOpcaoAlterarAtiva +"</button></td>"
+								   						   + "	<td>" + dados[i].nome + "</td>"
+								   						   + "	<td>" + dados[i].login + "</td>"
+								   						   + "	<td>" + dados[i].grauAutoridade + "</td>"
+								   						   + "	<td>" + FormatarDataHoraListaUsuarios(dados[i].dataCriada) + "</td>"
+								   						   + "	<td>" + dados[i].ativo + "</td>"
+								   						   + "</tr>";
+						}
+					}
+					
+					// não há posts cadastrados
+					else {
+						tabelaListaUsuarios.innerHTML = "<tr id='tabelaHeader'>"
+							   						  + "  <th>" + vuePainelListaUsuarios.trOpcoesAtiva + "</th>"
+							   						  + "  <th>" + vuePainelListaUsuarios.trNomeAtiva + "</th>"
+							   						  + "  <th>" + vuePainelListaUsuarios.trEmailAtiva + "</th>"
+							   						  + "  <th>" + vuePainelListaUsuarios.trNivelAutorizacaoAtiva + "</th>"
+							   						  + "  <th>" + vuePainelListaUsuarios.trDataCriacaoAtiva + "</th>"
+							   						  + "  <th>" + vuePainelListaUsuarios.trStatusAtiva + "</th>"
+							   						  + "</tr>";
 					}
 				}
 			}
@@ -46,7 +77,6 @@ function BuscarDadosUsuariosSemFiltro() {
 		
 	// Definição do header do método HTTP POST
 	// e envio dos parãmetros
-	//req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.send();
 }
