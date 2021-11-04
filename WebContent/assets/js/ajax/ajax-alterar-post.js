@@ -32,7 +32,7 @@ req.onreadystatechange = function() {
 		inputTituloAlterarPost.value = JSON.parse(this.responseText).titulo;
 		inputMensagemAlterarPost.value = JSON.parse(this.responseText).mensagem;
 		inputEnderecoAlterarPost.value = JSON.parse(this.responseText).endereco;
-		inputDataCriacaoAlterarPost.value = JSON.parse(this.responseText).dataCriacao;
+		inputDataCriacaoAlterarPost.value = TransformacaoDataHora(JSON.parse(this.responseText).dataCriacao);
 		inputStatusSelecionadoAlterarPost.value = JSON.parse(this.responseText).status.nome;
 		inputComentarioAlterarPost.value = JSON.parse(this.responseText).comentario;
 	}
@@ -93,7 +93,7 @@ botaoAlterarPost.addEventListener("click", () => {
 			    endereco: inputEnderecoAlterarPost.value,
 			    dataCriacao: inputDataCriacaoAlterarPost.value,
 			    status: inputStatusSelecionadoAlterarPost.value,
-			     comentario: inputComentarioAlterarPost.value
+			    comentario: inputComentarioAlterarPost.value
 		}
 		
 		req = new XMLHttpRequest();

@@ -29,7 +29,7 @@ req.onreadystatechange = function() {
 		inputEmail.value = JSON.parse(this.responseText).titulo;
 		inputNome.value = JSON.parse(this.responseText).mensagem;
 		inputAutoridade.value = JSON.parse(this.responseText).endereco;
-		inputDataCriacao.value = JSON.parse(this.responseText).dataCriacao;
+		inputDataCriacao.value = TransformacaoDataHora(JSON.parse(this.responseText).dataCriacao);
 		inputStatusSelecionadoUsuario.value = JSON.parse(this.responseText).status.nome;
 	}
 };
@@ -83,7 +83,7 @@ botaoSalvarUsuario.addEventListener("click", () => {
 			else {
 				
 				// Falha interna
-				if (JSON.parse(this.responseText).status == 500) {  }
+				if (this.responseText.includes("0")) {  }
 				
 				// Alteração Efetuada com sucesso
 				else { window.location.href = "painel.jsp"; }

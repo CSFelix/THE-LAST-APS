@@ -24,7 +24,7 @@ req.onreadystatechange = function() {
 		inputTituloVisualizarPost.value = JSON.parse(this.responseText).titulo;
 		inputMensagemVisualizarPost.value = JSON.parse(this.responseText).mensagem;
 		inputEnderecoVisualizarPost.value = JSON.parse(this.responseText).endereco;
-		inputDataCriacaoVisualizarPost.value = JSON.parse(this.responseText).dataCriacao;
+		inputDataCriacaoVisualizarPost.value = TransformacaoDataHora(JSON.parse(this.responseText).dataCriacao);
 		inputStatusSelecionadoVisualizarPost.value = JSON.parse(this.responseText).status.nome;
 		inputComentarioVisualizarPost.value = JSON.parse(this.responseText).comentario;
 	}

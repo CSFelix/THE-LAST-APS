@@ -52,7 +52,7 @@ function BuscarDadosUsuariosComFiltro() {
 									   						   + "	<td>" + dados[i].nome + "</td>"
 									   						   + "	<td>" + dados[i].login + "</td>"
 									   						   + "	<td>" + dados[i].grauAutoridade + "</td>"
-									   						   + "	<td>" + FormatarDataHoraListaUsuarios(dados[i].dataCriada) + "</td>"
+									   						   + "	<td>" + TransformacaoDataHora(dados[i].dataCriada) + "</td>"
 									   						   + "	<td>" + dados[i].ativo + "</td>"
 									   						   + "</tr>";
 							}

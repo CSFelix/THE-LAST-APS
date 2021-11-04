@@ -47,7 +47,7 @@ function BuscarDadosPostsComFiltro() {
 															   + "<tr>"
 									   						   + "	<td><button onclick='RedirecionarAlterarPost(this)' class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>" + vuePainelListaPosts.trOpcaoAvaliarAtiva + "</button>&nbsp&nbsp&nbsp<button onclick='RedirecionarVisualizarPost(this)' class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>" + vuePainelListaPosts.trOpcaoVisualizarAtiva + "</button></td>"
 									   						   + "	<td>" + dados[i].titulo + "</td>"
-									   						   + "	<td>" + FormatarDataHoraListaPost(dados[i].dataCriacao) + "</td>"
+									   						   + "	<td>" + TransformacaoDataHora(dados[i].dataCriacao) + "</td>"
 									   						   + "	<td>" + dados[i].status.nome + "</td>"
 									   						   + "</tr>";
 							}

@@ -9,13 +9,6 @@ var req;
 // clique no botão de busca de posts
 botaoAtualizarTabelaListaPostagens.addEventListener("click", () => { BuscarDadosPostsSemFiltro(); });
 
-// função para formatação de data / hora
-// TO-DO: pegar como informação vem com o guilherme para eu depois montar a formatação
-function FormatarDataHoraListaPost(data_hora) {
-	data_hora_transformada = data_hora;
-	return data_hora_transformada;
-}
-
 // função para busca dos dados
 function BuscarDadosPostsSemFiltro() {
 	
@@ -49,7 +42,7 @@ function BuscarDadosPostsSemFiltro() {
 														   + "<tr>"
 								   						   + "	<td><button onclick='RedirecionarAlterarPost(this)' class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>" + vuePainelListaPosts.trOpcaoAvaliarAtiva + "</button>&nbsp&nbsp&nbsp<button onclick='RedirecionarVisualizarPost(this)' class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>" + vuePainelListaPosts.trOpcaoVisualizarAtiva + "</button></td>"
 								   						   + "	<td>" + dados[i].titulo + "</td>"
-								   						   + "	<td>" + FormatarDataHoraListaPost(dados[i].dataCriacao) + "</td>"
+								   						   + "	<td>" + TransformacaoDataHora(dados[i].dataCriacao) + "</td>"
 								   						   + "	<td>" + dados[i].status.nome + "</td>"
 								   						   + "</tr>";
 						}

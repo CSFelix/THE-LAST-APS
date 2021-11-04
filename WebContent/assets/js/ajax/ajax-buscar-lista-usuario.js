@@ -9,13 +9,6 @@ var req;
 // clique no botão de busca de usuários
 botaoAtualizarTabelaListaUsuarios.addEventListener("click", () => { BuscarDadosUsuariosSemFiltro(); });
 
-//função para formatação de data / hora
-//TO-DO: pegar como informação vem com o guilherme para eu depois montar a formatação
-function FormatarDataHoraListaUsuarios(data_hora) {
-	data_hora_transformada = data_hora;
-	return data_hora_transformada;
-}
-
 // função para busca dos dados
 function BuscarDadosUsuariosSemFiltro() {
 	
@@ -54,7 +47,7 @@ function BuscarDadosUsuariosSemFiltro() {
 								   						   + "	<td>" + dados[i].nome + "</td>"
 								   						   + "	<td>" + dados[i].login + "</td>"
 								   						   + "	<td>" + dados[i].grauAutoridade + "</td>"
-								   						   + "	<td>" + FormatarDataHoraListaUsuarios(dados[i].dataCriada) + "</td>"
+								   						   + "	<td>" + TransformacaoDataHora(dados[i].dataCriada) + "</td>"
 								   						   + "	<td>" + dados[i].ativo + "</td>"
 								   						   + "</tr>";
 						}
