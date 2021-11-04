@@ -27,7 +27,6 @@ req.onreadystatechange = function() {
 		inputDataCriacaoVisualizarPost.value = JSON.parse(this.responseText).dataCriacao;
 		inputStatusSelecionadoVisualizarPost.value = JSON.parse(this.responseText).status.nome;
 		inputComentarioVisualizarPost.value = JSON.parse(this.responseText).comentario;
-		sessionStorage.setItem(JSON.parse(this.responseText).id);
 	}
 };
 
