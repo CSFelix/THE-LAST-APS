@@ -1,4 +1,4 @@
-const botaoAtualizarTabelaListaUsuariosFiltroNome = document.getElementById("botaoAtualizarTabelaListaUsuarios");
+const botaoAtualizarTabelaListaUsuariosFiltroNome = document.getElementById("botaoNomePesquisa");
 const tabelaListaUsuariosFiltroNome = document.getElementById("tabelaListaUsuarios");
 
 const inputNomePesquisaFiltroNome = document.getElementById("inputNomePesquisa");
@@ -51,7 +51,8 @@ function BuscarDadosUsuariosComFiltro() {
 			
 		// Definição do header do método HTTP POST
 		// e envio dos parãmetros
-		req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
+		//req.setRequestHeader('Authorization', localStorage.getItem("Authorization"));
+		req.setRequestHeader('Content-Type', 'application/json');
 		req.send();
 	}
 }
