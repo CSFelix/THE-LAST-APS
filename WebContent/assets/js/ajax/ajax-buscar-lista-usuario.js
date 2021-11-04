@@ -29,7 +29,7 @@ function BuscarDadosUsuariosComFiltro() {
 				else {
 					
 					// Falha Interna
-					if (this.responseText.includes("0")) { ExibirToastMessage(3); }
+					if (JSON.parse(this.responseText).status == 500) { ExibirToastMessage(3); }
 					
 					// Alteração Efetuada com sucesso
 					else { 
