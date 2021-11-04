@@ -19,6 +19,30 @@ var req;
 var url = new URLSearchParams(window.location.search);
 var id = url.get('idPost');
 
+// AJAX
+req = new XMLHttpRequest();
+req.open("GET", "http://localhost:3000/postagem/" + id, true);
+req.onreadystatechange = function() {
+	
+	// Servidor Fora do Ar
+	if (req.readyState != 4 || req.status != 200) {  }
+	
+	// Busca das Informações Efetuada com Sucesso
+	else { 
+		inputTituloAlterarPost.value = JSON.parse(this.responseText).titulo;
+		inputMensagemAlterarPost.value = JSON.parse(this.responseText).mensagem;
+		inputEnderecoAlterarPost.value = JSON.parse(this.responseText).endereco;
+		inputDataCriacaoAlterarPost.value = JSON.parse(this.responseText).dataCriacao;
+		inputStatusSelecionadoAlterarPost.value = JSON.parse(this.responseText).status.nome;
+		inputComentarioAlterarPost.value = JSON.parse(this.responseText).comentario;
+	}
+};
+
+// Definição do header
+// e envio dos parãmetros
+req.setRequestHeader('Content-Type', 'application/json');
+req.send();
+
 // clique no botão de cadastro de post
 botaoAlterarPost.addEventListener("click", () => {
 	
