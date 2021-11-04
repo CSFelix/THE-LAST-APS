@@ -59,7 +59,7 @@
 				- selectStatusFechadoAtiva
 				- selectStatusDescartadoAtiva
 			 -->
-			<p class="campoInput">{{ selectStatusPendenteAtiva }}</p>
+			<p id="statusSelecionado" class="campoInput">{{ selectStatusPendenteAtiva }}</p>
 		</div>
 		<br><br>
 		
