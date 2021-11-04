@@ -1,17 +1,18 @@
 * { margin: 0; padding: 0; text-decoration: none; list-style: none; vertical-align: baseline; scroll-behavior: smooth; outline: none; box-sizing: border-box; }
 
 :root {
-	--background-color: #f0f8ff;
+	--background-color: #d3dce5;
 	--theme-color: #363636;
 
-	--background-opacity-color: #f8f8ff;
+	--background-opacity-color: #d3dce5;
+	--section-background-color: #f8f8ff;
 	--theme-opacity-color: #363636;
 
 	--nav-config-options-color: rgba(97, 94, 94, 0.9);
 
-	--style-primary-color: #32ce1a;
-	--style-secondary-color: #43e065;
-	--style-terciary-color: #0aaf3e;
+	--style-primary-color: #19560f;
+	--style-secondary-color: #0a3504;
+	--style-terciary-color: #19560f;
 	
 	--style-primary-disabled: #ddd;
 	--style-secondary-disabled: #777;
@@ -22,13 +23,14 @@
 	--theme-color: #f0f8ff;
 
 	--background-opacity-color: #383737;
-	--theme-opacity-color: #f8f8ff;
+	--section-background-color: #383737;
+	--theme-opacity-color: #d3dce5;
 
 	--nav-config-options-color: rgba(206, 213, 219, 0.9);
 
-	--style-primary-color: #32ce1a;
-	--style-secondary-color: #43e065;
-	--style-terciary-color: #0aaf3e;
+	--style-primary-color: #19560f;
+	--style-secondary-color: #0a3504;
+	--style-terciary-color: #19560f;
 	
 	--style-primary-disabled: #555;
 	--style-secondary-disabled: #ccc;
