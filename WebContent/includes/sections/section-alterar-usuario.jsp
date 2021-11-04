@@ -51,8 +51,8 @@
 			<p>🔐 {{ labelStatusAtiva }}</p>&nbsp&nbsp
 						
 			<select id="statusSelecionado" name="statusUsuario" class="campoInput">
-				<option value="1">{{ selectStatusLiberadoAtiva }}</option>
-				<option value="2">{{ selectStatusBloqueadoAtiva }}</option>
+				<option value="true">{{ selectStatusLiberadoAtiva }}</option>
+				<option value="false">{{ selectStatusBloqueadoAtiva }}</option>
 			</select>
 		</div>
 		<br><br>
