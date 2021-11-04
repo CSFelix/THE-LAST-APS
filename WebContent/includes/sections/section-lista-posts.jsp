@@ -24,8 +24,8 @@
 	
 	<!-- tabela das postagens -->
 	<table id="tabelaListaPostagens" class="tabelaPrincipal" data-anijs="if: load, on: window, do: rubberBand animated">
-	  
-	  	<!-- header da tabela -->
+	  	
+	  	<!-- 
 	 	<tr id="tabelaHeader">
 	 		<th>{{ trOpcoesAtiva }}</th>
 	    	<th>{{ trTituloAtiva }}</th>
@@ -33,7 +33,7 @@
 	    	<th>{{ trStatusAtiva }}</th>
 		</tr>
 		
-		<!-- 
+		
 		<tr>
 			<td>
 				<button class="botao" data-anijs="if: mouseover, do: rubberBand animated">{{ trOpcaoAvaliarAtiva }}</button>
