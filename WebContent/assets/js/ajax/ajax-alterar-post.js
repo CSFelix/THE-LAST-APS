@@ -87,7 +87,7 @@ botaoAlterarPost.addEventListener("click", () => {
 		
 		// AJAX
 		params =  {
-			    idPost: id,
+			    id: id,
 			    titulo: inputTituloAlterarPost.value,
 			    mensagem: inputMensagemAlterarPost.value,
 			    endereco: inputEnderecoAlterarPost.value,
