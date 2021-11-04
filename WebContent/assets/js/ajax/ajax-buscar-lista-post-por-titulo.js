@@ -37,7 +37,7 @@ function BuscarDadosPostsComFiltro() {
 						
 						for (i = 0; i < dados.length; i++) {
 							tabelaListaPostagens.innerHTML += "<tr>"
-											+ "	<td><button onclick='RedirecionarAlterarPost(this)' class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>Rate / Avaliar</button>&nbsp&nbsp&nbsp<button class='botao' data-anijs='if: mouseover, do: rubberBand animated'>View / Visualizar</button></td>"
+											+ "	<td><button onclick='RedirecionarAlterarPost(this)' class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>Rate / Avaliar</button>&nbsp&nbsp&nbsp<button class='botao' data-id='" + dados[i].id + "' data-anijs='if: mouseover, do: rubberBand animated'>View / Visualizar</button></td>"
 								   			+ "	<td>" + dados[i].titulo + "</td>"
 								   			+ "	<td>" + dados[i].dataCriacao + "</td>"
 								   			+ "	<td>" + dados[i].status.nome + "</td>"
